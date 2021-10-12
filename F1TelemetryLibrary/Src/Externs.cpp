@@ -172,6 +172,136 @@ uint8_t F1TS_resultStatus(int8_t carId)
 	return telemetry->packet_manager()->lap_data()->resultStatus(carId);
 }
 
+uint8_t F1TS_weather()
+{
+	return telemetry->packet_manager()->session_data()->weather();
+}
+
+int8_t F1TS_trackTemperature()
+{
+	return telemetry->packet_manager()->session_data()->trackTemperature();	
+}
+
+int8_t F1TS_airTemperature()
+{
+	return telemetry->packet_manager()->session_data()->airTemperature();
+}
+
+uint8_t F1TS_totalLaps()
+{
+	return telemetry->packet_manager()->session_data()->totalLaps();
+}
+
+uint16_t F1TS_trackLength()
+{
+	return telemetry->packet_manager()->session_data()->trackLength();
+}
+
+uint8_t F1TS_sessionType()
+{
+	return telemetry->packet_manager()->session_data()->sessionType();
+}
+
+int8_t F1TS_trackId()
+{
+	return telemetry->packet_manager()->session_data()->trackId();
+}
+
+uint8_t F1TS_formula()
+{
+	return telemetry->packet_manager()->session_data()->formula();
+}
+
+uint16_t F1TS_sessionTimeLeft()
+{
+	return telemetry->packet_manager()->session_data()->sessionTimeLeft();
+}
+
+uint16_t F1TS_sessionDuration()
+{
+	return telemetry->packet_manager()->session_data()->sessionDuration();
+}
+
+uint8_t F1TS_pitSpeedLimit()
+{
+	return telemetry->packet_manager()->session_data()->pitSpeedLimit();
+}
+
+uint8_t F1TS_gamePaused()
+{
+	return telemetry->packet_manager()->session_data()->gamePaused();
+}
+
+uint8_t F1TS_isSpectating()
+{
+	return telemetry->packet_manager()->session_data()->isSpectating();
+}
+
+uint8_t F1TS_spectatorCarIndex()
+{
+	return telemetry->packet_manager()->session_data()->spectatorCarIndex();
+}
+
+uint8_t F1TS_sliProNativeSupport()
+{
+	return telemetry->packet_manager()->session_data()->sliProNativeSupport();
+}
+
+uint8_t F1TS_numMarshalZones()
+{
+	return telemetry->packet_manager()->session_data()->numMarshalZones();
+}
+
+float F1TS_marshalZoneStart(int8_t zone)
+{
+	return telemetry->packet_manager()->session_data()->marshalZoneStart(zone);
+}
+
+int8_t F1TS_marshalZoneFlag(int8_t zone)
+{
+	return telemetry->packet_manager()->session_data()->marshalZoneFlag(zone);
+}
+
+uint8_t F1TS_safetyCarStatus()
+{
+	return telemetry->packet_manager()->session_data()->safetyCarStatus();
+}
+
+uint8_t F1TS_networkGame()
+{
+	return telemetry->packet_manager()->session_data()->networkGame();
+}
+
+uint8_t F1TS_numWeatherForecastSamples()
+{
+	return telemetry->packet_manager()->session_data()->numWeatherForecastSamples();
+}
+
+uint8_t F1TS_weatherForecastSampleSessionType(int8_t sample)
+{
+	return telemetry->packet_manager()->session_data()->weatherForecastSessionType(sample);
+}
+
+uint8_t F1TS_weatherForecastSampleTimeOffset(int8_t sample)
+{
+	return telemetry->packet_manager()->session_data()->weatherForecastTimeOffset(sample);
+}
+
+uint8_t F1TS_weatherForecastSampleWeather(int8_t sample)
+{
+	return telemetry->packet_manager()->session_data()->weatherForecastWeather(sample);
+}
+
+int8_t F1TS_weatherForecastSampleTrackTemperature(int8_t sample)
+{
+	return telemetry->packet_manager()->session_data()->weatherForecastTrackTemperature(sample);
+}
+
+int8_t F1TS_weatherForecastSampleAirTemperature(int8_t sample)
+{
+	return telemetry->packet_manager()->session_data()->weatherForecastAirTemperature(sample);
+}
+
 float F1TS_worldPositionX(int8_t carId)
 {
 	return telemetry->packet_manager()->motion_data()->worldPositionX(carId);

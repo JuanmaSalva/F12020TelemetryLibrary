@@ -6,6 +6,7 @@ PacketManager::PacketManager()
 {
     pHeader = PacketHeader();
     lapData_ = new PacketLapData();
+    sessionData_ = new PacketSessionData();
     motionData_ = new PacketMotionData();
 }
 
@@ -32,6 +33,7 @@ void PacketManager::procesPacket(char* buf) const
         break;
     case 1:
         std::cout << "Session data\n";
+        sessionData_->update(buf);
         break;
     case 2:
     {

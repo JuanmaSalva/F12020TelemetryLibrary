@@ -72,8 +72,39 @@ F1LIBRARY_EXPORTS uint8_t F1TS_gridPosition(int8_t carId);
 F1LIBRARY_EXPORTS uint8_t F1TS_driverStatus(int8_t carId);
 F1LIBRARY_EXPORTS uint8_t F1TS_resultStatus(int8_t carId);
 
+//SESSION DATA
+F1LIBRARY_EXPORTS uint8_t F1TS_weather();
+F1LIBRARY_EXPORTS int8_t F1TS_trackTemperature();
+F1LIBRARY_EXPORTS int8_t F1TS_airTemperature();
+F1LIBRARY_EXPORTS uint8_t F1TS_totalLaps();
+F1LIBRARY_EXPORTS uint16_t F1TS_trackLength();
+F1LIBRARY_EXPORTS uint8_t F1TS_sessionType();
+F1LIBRARY_EXPORTS int8_t F1TS_trackId();
+F1LIBRARY_EXPORTS uint8_t F1TS_formula();
+F1LIBRARY_EXPORTS uint16_t F1TS_sessionTimeLeft();
+F1LIBRARY_EXPORTS uint16_t F1TS_sessionDuration();
+F1LIBRARY_EXPORTS uint8_t F1TS_pitSpeedLimit();
+F1LIBRARY_EXPORTS uint8_t F1TS_gamePaused();
+F1LIBRARY_EXPORTS uint8_t F1TS_isSpectating();
+F1LIBRARY_EXPORTS uint8_t F1TS_spectatorCarIndex();
+F1LIBRARY_EXPORTS uint8_t F1TS_sliProNativeSupport();
+F1LIBRARY_EXPORTS uint8_t F1TS_numMarshalZones();
 
-//MOTION PACKET DATA
+F1LIBRARY_EXPORTS float F1TS_marshalZoneStart(int8_t zone);
+F1LIBRARY_EXPORTS int8_t F1TS_marshalZoneFlag(int8_t zone);
+
+F1LIBRARY_EXPORTS uint8_t F1TS_safetyCarStatus();
+F1LIBRARY_EXPORTS uint8_t F1TS_networkGame();
+
+F1LIBRARY_EXPORTS uint8_t F1TS_numWeatherForecastSamples();
+F1LIBRARY_EXPORTS uint8_t F1TS_weatherForecastSampleSessionType(int8_t sample);
+F1LIBRARY_EXPORTS uint8_t F1TS_weatherForecastSampleTimeOffset(int8_t sample);
+F1LIBRARY_EXPORTS uint8_t F1TS_weatherForecastSampleWeather(int8_t sample);
+F1LIBRARY_EXPORTS int8_t F1TS_weatherForecastSampleTrackTemperature(int8_t sample);
+F1LIBRARY_EXPORTS int8_t F1TS_weatherForecastSampleAirTemperature(int8_t sample);
+
+
+//MOTION DATA
 F1LIBRARY_EXPORTS float F1TS_worldPositionX(int8_t carId);
 F1LIBRARY_EXPORTS float F1TS_worldPositionY(int8_t carId);
 F1LIBRARY_EXPORTS float F1TS_worldPositionZ(int8_t carId);

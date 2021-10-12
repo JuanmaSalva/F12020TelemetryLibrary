@@ -21,8 +21,7 @@ struct CarMotionData
     float         m_yaw;                      // Yaw angle in radians
     float         m_pitch;                    // Pitch angle in radians
     float         m_roll;                     // Roll angle in radians
-
-
+    
     void FromBin(char* &data)
     {
         memcpy(&m_worldPositionX, data, sizeof(float)); data += sizeof(float);
@@ -52,6 +51,7 @@ struct CarMotionData
 
 struct PacketMotionData
 {
+private:
     CarMotionData   m_carMotionData[22];    	// Data for all cars on track
 
     // Extra player car ONLY data
@@ -91,19 +91,20 @@ struct PacketMotionData
         memcpy(&m_frontWheelsAngle, data, sizeof(float)); data += sizeof(float);
     }
 
-    PacketMotionData() {};
+public:
 	
-    void update(char* data)
-	{
-		for (CarMotionData motion_data : m_carMotionData)
-		{
+    void update(char* &data)
+    {
+        for (CarMotionData motion_data : m_carMotionData)
+        {
             motion_data = CarMotionData();
             motion_data.FromBin(data);
-		}
+        }
 
-        FromBin(data);		
-	}
-
+        FromBin(data);
+    }
+        	
+    //GETTERS
     float worldPositionX(int8_t carId) const { return m_carMotionData[carId].m_worldPositionX; }
     float worldPositionY(int8_t carId) const { return m_carMotionData[carId].m_worldPositionY; }
     float worldPositionZ(int8_t carId) const { return m_carMotionData[carId].m_worldPositionZ; }

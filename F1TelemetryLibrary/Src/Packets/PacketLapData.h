@@ -41,7 +41,7 @@ struct LapData
                                             // 3 = finished, 4 = disqualified, 5 = not classified
                                             // 6 = retired
 
-    void FromBin(char* data) {
+    void FromBin(char* &data) {
         memcpy(&m_lastLapTime, data, sizeof(float)); data += sizeof(float);
         memcpy(&m_currentLapTime, data, sizeof(float)); data += sizeof(float);
 
@@ -79,11 +79,9 @@ struct LapData
 
 struct PacketLapData
 {
-    PacketLapData() {};
-
     LapData m_lapData[22];        // Lap data for all cars on track
 
-	void update(char* data)
+	void update(char* &data)
     {
         for (int i = 0; i < 22; i++) {
             m_lapData[i] = LapData();

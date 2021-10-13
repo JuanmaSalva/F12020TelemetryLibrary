@@ -165,6 +165,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Src\Externs.h" />
+    <ClInclude Include="Src\Packets\PacketEventData.h" />
     <ClInclude Include="Src\Packets\PacketHeader.h" />
     <ClInclude Include="Src\Packets\PacketLapData.h" />
     <ClInclude Include="Src\Packets\PacketManager.h" />

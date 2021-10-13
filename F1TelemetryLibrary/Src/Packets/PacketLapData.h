@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-
 
 struct LapData
 {

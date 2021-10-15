@@ -182,7 +182,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Src\Externs.cpp" />
+    <ClCompile Include="Src\Packets\PacketEventData.cpp" />
+    <ClCompile Include="Src\Packets\PacketHeader.cpp" />
+    <ClCompile Include="Src\Packets\PacketLapData.cpp" />
     <ClCompile Include="Src\Packets\PacketManager.cpp" />
+    <ClCompile Include="Src\Packets\PacketMotionData.cpp" />
+    <ClCompile Include="Src\Packets\PacketSessionData.cpp" />
     <ClCompile Include="Src\TelemetryF1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

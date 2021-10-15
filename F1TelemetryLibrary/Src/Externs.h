@@ -35,6 +35,7 @@ std::thread t;
 TelemetryF1* telemetry;
 bool isReady_ = false;
 
+F1LIBRARY_EXPORTS void pruebaCallback(void (*f)());
 
 //GENERAL.
 F1LIBRARY_EXPORTS void F1TS_startF1Telemetry();
@@ -154,3 +155,33 @@ F1LIBRARY_EXPORTS float F1TS_angularAccelerationX();
 F1LIBRARY_EXPORTS float F1TS_angularAccelerationY();
 F1LIBRARY_EXPORTS float F1TS_angularAccelerationZ();
 F1LIBRARY_EXPORTS float F1TS_frontWheelsAngle();
+
+
+//EVENT DATA
+F1LIBRARY_EXPORTS void F1TS_sessionStartedCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_sessionEndedCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_fastestLapCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_retirementCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_DRSenabledCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_DRSdisabledCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_teamMateInPitsCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_chequeredFlagCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_raceWinnerCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_penaltyIssuedCallBack(void (*f)());
+F1LIBRARY_EXPORTS void F1TS_speedTrapTriggeredCallBack(void (*f)());
+
+
+F1LIBRARY_EXPORTS uint8_t F1TS_fastestLapVehicleIdx();
+F1LIBRARY_EXPORTS float F1TS_fastestLaplapTime();	
+F1LIBRARY_EXPORTS uint8_t F1TS_retirementVehicleIdx();	
+F1LIBRARY_EXPORTS uint8_t F1TS_teamMateInPitsVehicleIdx();
+F1LIBRARY_EXPORTS uint8_t F1TS_raceWinnerVehicleIdx();
+F1LIBRARY_EXPORTS uint8_t F1TS_penaltyType();
+F1LIBRARY_EXPORTS uint8_t F1TS_penaltyInfrigimentType();
+F1LIBRARY_EXPORTS uint8_t F1TS_penaltyVehicleIdx();
+F1LIBRARY_EXPORTS uint8_t F1TS_penaltyOtherVehicleIdx();
+F1LIBRARY_EXPORTS uint8_t F1TS_penaltyTime();
+F1LIBRARY_EXPORTS uint8_t F1TS_penaltyLapNum();
+F1LIBRARY_EXPORTS uint8_t F1TS_penaltyPlacesGained();
+F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapVehicleIdx();
+F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapSpeed();

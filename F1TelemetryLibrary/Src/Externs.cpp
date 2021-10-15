@@ -4,7 +4,6 @@
 #include <limits.h>
 #include "TelemetryF1.h"
 
-
 void F1TS_startF1Telemetry()
 {
 	isReady_ = false;
@@ -540,4 +539,129 @@ float F1TS_angularAccelerationZ()
 float F1TS_frontWheelsAngle()
 {
 	return telemetry->packet_manager()->motion_data()->frontWheelsAngle();
+}
+
+void F1TS_sessionStartedCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->sessionStartedCallBack(f);
+}
+
+void F1TS_sessionEndedCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->sessionEndedCallBack(f);
+}
+
+void F1TS_fastestLapCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->fastestLapCallBack(f);
+}
+
+void F1TS_retirementCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->retirementCallBack(f);
+}
+
+void F1TS_DRSenabledCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->DRSenabledCallBack(f);
+}
+
+void F1TS_DRSdisabledCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->DRSdisabledCallBack(f);
+}
+
+void F1TS_teamMateInPitsCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->teamMateInPitsCallBack(f);
+}
+
+void F1TS_chequeredFlagCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->chequeredFlagCallBack(f);
+}
+
+void F1TS_raceWinnerCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->raceWinnerCallBack(f);
+}
+
+void F1TS_penaltyIssuedCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->penaltyIssuedCallBack(f);
+}
+
+void F1TS_speedTrapTriggeredCallBack(void(* f)())
+{
+	return telemetry->packet_manager()->event_data()->speedTrapTriggeredCallBack(f);
+}
+
+uint8_t F1TS_fastestLapVehicleIdx()
+{
+	return telemetry->packet_manager()->event_data()->fastestLapVehicleIdx();
+}
+
+float F1TS_fastestLaplapTime()
+{
+	return telemetry->packet_manager()->event_data()->fastestLaplapTime();
+}
+
+uint8_t F1TS_retirementVehicleIdx()
+{
+	return telemetry->packet_manager()->event_data()->retirementVehicleIdx();
+}
+
+uint8_t F1TS_teamMateInPitsVehicleIdx()
+{
+	return telemetry->packet_manager()->event_data()->teamMateInPitsVehicleIdx();
+}
+
+uint8_t F1TS_raceWinnerVehicleIdx()
+{
+	return telemetry->packet_manager()->event_data()->raceWinnerVehicleIdx();
+}
+
+uint8_t F1TS_penaltyType()
+{
+	return telemetry->packet_manager()->event_data()->penaltyType();
+}
+
+uint8_t F1TS_penaltyInfrigimentType()
+{
+	return telemetry->packet_manager()->event_data()->penaltyInfrigimentType();
+}
+
+uint8_t F1TS_penaltyVehicleIdx()
+{
+	return telemetry->packet_manager()->event_data()->penaltyVehicleIdx();
+}
+
+uint8_t F1TS_penaltyOtherVehicleIdx()
+{
+	return telemetry->packet_manager()->event_data()->penaltyOtherVehicleIdx();
+}
+
+uint8_t F1TS_penaltyTime()
+{
+	return telemetry->packet_manager()->event_data()->penaltyTime();
+}
+
+uint8_t F1TS_penaltyLapNum()
+{
+	return telemetry->packet_manager()->event_data()->penaltyLapNum();
+}
+
+uint8_t F1TS_penaltyPlacesGained()
+{
+	return telemetry->packet_manager()->event_data()->penaltyPlacesGained();
+}
+
+uint8_t F1TS_speedTrapVehicleIdx()
+{
+	return telemetry->packet_manager()->event_data()->speedTrapVehicleIdx();
+}
+
+uint8_t F1TS_speedTrapSpeed()
+{
+	return telemetry->packet_manager()->event_data()->speedTrapSpeed();
 }

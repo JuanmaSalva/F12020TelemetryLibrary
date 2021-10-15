@@ -18,7 +18,7 @@ PacketManager::~PacketManager()
 void PacketManager::newPacket(char* buf)
 {
 	//primero leemos el header del paquete para saber de que es
-	pHeader.FromBin(buf);
+	pHeader.fromBin(buf);
 
     procesPacket(buf);
 }
@@ -43,6 +43,7 @@ void PacketManager::procesPacket(char* buf) const
     }
     case 3:
         std::cout << "Event data\n";
+        eventData_->update(buf);
         break;
     case 4:
         std::cout << "Participants data\n";

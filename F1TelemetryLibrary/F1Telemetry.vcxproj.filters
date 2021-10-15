@@ -22,6 +22,9 @@
     <Filter Include="Archivos de encabezado\Packets">
       <UniqueIdentifier>{98e1a8cd-eabb-4799-856d-59e5e88a0ccf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Packets">
+      <UniqueIdentifier>{f67ee4ae-0bc6-46a8-b114-6462e65e85c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\TelemetryF1.h">
@@ -69,6 +72,21 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Src\Packets\PacketManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketEventData.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketHeader.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketLapData.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketMotionData.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketSessionData.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

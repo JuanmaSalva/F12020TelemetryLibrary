@@ -666,42 +666,152 @@ uint8_t F1TS_speedTrapSpeed()
 	return telemetry->packet_manager()->event_data()->speedTrapSpeed();
 }
 
-uint8_t numActiveCars()
+uint8_t F1TS_numActiveCars()
 {
 	return telemetry->packet_manager()->participants_data()->numActiveCars();
 }
 
-uint8_t aiControlled(uint8_t idx)
+uint8_t F1TS_aiControlled(uint8_t idx)
 {
 	return telemetry->packet_manager()->participants_data()->aiControlled(idx);
 }
 
-uint8_t driverId(uint8_t idx)
+uint8_t F1TS_driverId(uint8_t idx)
 {
 	return telemetry->packet_manager()->participants_data()->driverId(idx);
 }
 
-uint8_t teamId(uint8_t idx)
+uint8_t F1TS_teamId(uint8_t idx)
 {
 	return telemetry->packet_manager()->participants_data()->teamId(idx);
 }
 
-uint8_t raceNumber(uint8_t idx)
+uint8_t F1TS_raceNumber(uint8_t idx)
 {
 	return telemetry->packet_manager()->participants_data()->raceNumber(idx);
 }
 
-uint8_t nationality(uint8_t idx)
+uint8_t F1TS_nationality(uint8_t idx)
 {
 	return telemetry->packet_manager()->participants_data()->nationality(idx);
 }
 
-void name(uint8_t idx, char* n)
+void F1TS_name(uint8_t idx, char* n)
 {
 	return telemetry->packet_manager()->participants_data()->name(idx, n);
 }
 
-uint8_t yourTelemetry(uint8_t idx)
+uint8_t F1TS_yourTelemetry(uint8_t idx)
 {
 	return telemetry->packet_manager()->participants_data()->yourTelemetry(idx);
+}
+
+uint8_t F1TS_frontWing(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontWing(carIdx);
+}
+
+uint8_t F1TS_rearWing(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearWing(carIdx);
+}
+
+uint8_t F1TS_onThrottle(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->onThrottle(carIdx);
+}
+
+uint8_t F1TS_offThrottle(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->offThrottle(carIdx);
+}
+
+float F1TS_frontCamber(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontCamber(carIdx);
+}
+
+float F1TS_rearCamber(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearCamber(carIdx);
+}
+
+float F1TS_frontToe(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontToe(carIdx);
+}
+
+float F1TS_rearToe(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearToe(carIdx);
+}
+
+uint8_t F1TS_frontSuspension(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontSuspension(carIdx);
+}
+
+uint8_t F1TS_rearSuspension(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearSuspension(carIdx);
+}
+
+uint8_t F1TS_frontAntiRollBar(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontAntiRollBar(carIdx);
+}
+
+uint8_t F1TS_rearAntiRollBar(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearAntiRollBar(carIdx);
+}
+
+uint8_t F1TS_frontSuspensionHeight(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontSuspensionHeight(carIdx);
+}
+
+uint8_t F1TS_rearSuspensionHeight(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearSuspensionHeight(carIdx);
+}
+
+uint8_t F1TS_brakePressure(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->brakePressure(carIdx);
+}
+
+uint8_t F1TS_brakeBias(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->brakeBias(carIdx);
+}
+
+float F1TS_rearLeftTyrePressure(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearLeftTyrePressure(carIdx);
+}
+
+float F1TS_rearRightTyrePressure(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->rearRightTyrePressure(carIdx);
+}
+
+float F1TS_frontLeftTyrePressure(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontLeftTyrePressure(carIdx);
+}
+
+float F1TS_frontRightTyrePressure(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->frontRightTyrePressure(carIdx);
+}
+
+uint8_t F1TS_ballast(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->ballast(carIdx);
+}
+
+float F1TS_fuelLoad(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_setup_data()->fuelLoad(carIdx);
 }

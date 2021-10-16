@@ -5,9 +5,12 @@
 PacketManager::PacketManager()
 {
     pHeader = PacketHeader();
-    lapData_ = new PacketLapData();
-    sessionData_ = new PacketSessionData();
     motionData_ = new PacketMotionData();
+    sessionData_ = new PacketSessionData();
+    lapData_ = new PacketLapData();
+    eventData_ = new PacketEventData();
+    participantsData_ = new PacketParticipantsData();
+    carSetupsData_ = new PacketCarSetupData();
 }
 
 PacketManager::~PacketManager()
@@ -47,9 +50,11 @@ void PacketManager::procesPacket(char* buf) const
         break;
     case 4:
         std::cout << "Participants data\n";
+        participantsData_->update(buf);
         break;
     case 5:
         std::cout << "Car Setups data\n";
+        carSetupsData_->update(buf);
         break;
     case 6:
         std::cout << "Car Telemetry data\n";

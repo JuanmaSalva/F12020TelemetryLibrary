@@ -186,13 +186,39 @@ F1LIBRARY_EXPORTS uint8_t F1TS_penaltyPlacesGained();
 F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapVehicleIdx();
 F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapSpeed();
 
-//PARTICIPANTS DATA
-F1LIBRARY_EXPORTS uint8_t numActiveCars();
 
-F1LIBRARY_EXPORTS uint8_t aiControlled(uint8_t idx);
-F1LIBRARY_EXPORTS uint8_t driverId(uint8_t idx);
-F1LIBRARY_EXPORTS uint8_t teamId(uint8_t idx);
-F1LIBRARY_EXPORTS uint8_t raceNumber(uint8_t idx);
-F1LIBRARY_EXPORTS uint8_t nationality(uint8_t idx);
-F1LIBRARY_EXPORTS void name(uint8_t idx, char* n);
-F1LIBRARY_EXPORTS uint8_t yourTelemetry(uint8_t idx);
+//PARTICIPANTS DATA
+F1LIBRARY_EXPORTS uint8_t F1TS_numActiveCars();
+
+F1LIBRARY_EXPORTS uint8_t F1TS_aiControlled(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t F1TS_driverId(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t F1TS_teamId(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t F1TS_raceNumber(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t F1TS_nationality(uint8_t idx);
+F1LIBRARY_EXPORTS void F1TS_name(uint8_t idx, char* n);
+F1LIBRARY_EXPORTS uint8_t F1TS_yourTelemetry(uint8_t idx);
+
+
+//CAR SETUPS DATA
+F1LIBRARY_EXPORTS uint8_t F1TS_frontWing(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_rearWing(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_onThrottle(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_offThrottle(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_frontCamber(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_rearCamber(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_frontToe(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_rearToe(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_frontSuspension(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_rearSuspension(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_frontAntiRollBar(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_rearAntiRollBar(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_frontSuspensionHeight(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_rearSuspensionHeight(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_brakePressure(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_brakeBias(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_rearLeftTyrePressure(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_rearRightTyrePressure(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_frontLeftTyrePressure(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_frontRightTyrePressure(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_ballast(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_fuelLoad(int8_t carIdx);

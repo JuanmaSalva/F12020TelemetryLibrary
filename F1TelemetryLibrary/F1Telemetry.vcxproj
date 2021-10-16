@@ -170,6 +170,7 @@
     <ClInclude Include="Src\Packets\PacketLapData.h" />
     <ClInclude Include="Src\Packets\PacketManager.h" />
     <ClInclude Include="Src\Packets\PacketMotionData.h" />
+    <ClInclude Include="Src\Packets\PacketParticipantsData.h" />
     <ClInclude Include="Src\Packets\PacketSessionData.h" />
     <ClInclude Include="Src\TelemetryF1.h" />
   </ItemGroup>
@@ -187,6 +188,7 @@
     <ClCompile Include="Src\Packets\PacketLapData.cpp" />
     <ClCompile Include="Src\Packets\PacketManager.cpp" />
     <ClCompile Include="Src\Packets\PacketMotionData.cpp" />
+    <ClCompile Include="Src\Packets\PacketParticipantsData.cpp" />
     <ClCompile Include="Src\Packets\PacketSessionData.cpp" />
     <ClCompile Include="Src\TelemetryF1.cpp" />
   </ItemGroup>

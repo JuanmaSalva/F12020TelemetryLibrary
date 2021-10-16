@@ -665,3 +665,43 @@ uint8_t F1TS_speedTrapSpeed()
 {
 	return telemetry->packet_manager()->event_data()->speedTrapSpeed();
 }
+
+uint8_t numActiveCars()
+{
+	return telemetry->packet_manager()->participants_data()->numActiveCars();
+}
+
+uint8_t aiControlled(uint8_t idx)
+{
+	return telemetry->packet_manager()->participants_data()->aiControlled(idx);
+}
+
+uint8_t driverId(uint8_t idx)
+{
+	return telemetry->packet_manager()->participants_data()->driverId(idx);
+}
+
+uint8_t teamId(uint8_t idx)
+{
+	return telemetry->packet_manager()->participants_data()->teamId(idx);
+}
+
+uint8_t raceNumber(uint8_t idx)
+{
+	return telemetry->packet_manager()->participants_data()->raceNumber(idx);
+}
+
+uint8_t nationality(uint8_t idx)
+{
+	return telemetry->packet_manager()->participants_data()->nationality(idx);
+}
+
+void name(uint8_t idx, char* n)
+{
+	return telemetry->packet_manager()->participants_data()->name(idx, n);
+}
+
+uint8_t yourTelemetry(uint8_t idx)
+{
+	return telemetry->packet_manager()->participants_data()->yourTelemetry(idx);
+}

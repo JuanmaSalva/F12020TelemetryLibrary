@@ -185,3 +185,14 @@ F1LIBRARY_EXPORTS uint8_t F1TS_penaltyLapNum();
 F1LIBRARY_EXPORTS uint8_t F1TS_penaltyPlacesGained();
 F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapVehicleIdx();
 F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapSpeed();
+
+//PARTICIPANTS DATA
+F1LIBRARY_EXPORTS uint8_t numActiveCars();
+
+F1LIBRARY_EXPORTS uint8_t aiControlled(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t driverId(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t teamId(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t raceNumber(uint8_t idx);
+F1LIBRARY_EXPORTS uint8_t nationality(uint8_t idx);
+F1LIBRARY_EXPORTS void name(uint8_t idx, char* n);
+F1LIBRARY_EXPORTS uint8_t yourTelemetry(uint8_t idx);

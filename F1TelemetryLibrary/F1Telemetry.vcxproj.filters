@@ -57,6 +57,9 @@
     <ClInclude Include="Src\Packets\PacketEventData.h">
       <Filter>Archivos de encabezado\Packets</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Packets\PacketParticipantsData.h">
+      <Filter>Archivos de encabezado\Packets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\TelemetryF1.cpp">
@@ -87,7 +90,10 @@
       <Filter>Archivos de origen\Packets</Filter>
     </ClCompile>
     <ClCompile Include="Src\Packets\PacketSessionData.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketParticipantsData.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

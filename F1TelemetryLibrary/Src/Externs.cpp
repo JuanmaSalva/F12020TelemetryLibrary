@@ -815,3 +815,98 @@ float F1TS_fuelLoad(int8_t carIdx)
 {
 	return telemetry->packet_manager()->car_setup_data()->fuelLoad(carIdx);
 }
+
+uint16_t F1TS_speed(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->speed(carIdx);
+}
+
+float F1TS_throttle(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->throttle(carIdx);
+}
+
+float F1TS_steer(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->steer(carIdx);
+}
+
+float F1TS_brake(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->brake(carIdx);
+}
+
+uint8_t F1TS_clutch(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->clutch(carIdx);
+}
+
+int8_t F1TS_gear(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->gear(carIdx);
+}
+
+uint16_t F1TS_engineRPM(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->engineRPM(carIdx);
+}
+
+uint8_t F1TS_drs(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->drs(carIdx);
+}
+
+uint8_t F1TS_revLightsPercent(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->revLightsPercent(carIdx);
+}
+
+uint16_t F1TS_brakesTemperature(int8_t carIdx, int8_t tyre)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->brakesTemperature(carIdx, tyre);
+}
+
+uint8_t F1TS_tyresSurfaceTemperature(int8_t carIdx, int8_t tyre)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->tyresSurfaceTemperature(carIdx, tyre);
+}
+
+uint8_t F1TS_tyresInnerTemperature(int8_t carIdx, int8_t tyre)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->tyresInnerTemperature(carIdx, tyre);
+}
+
+uint16_t F1TS_engineTemperature(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->engineTemperature(carIdx);
+}
+
+float F1TS_tyresPressure(int8_t carIdx, int8_t tyre)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->tyresPressure(carIdx, tyre);
+}
+
+uint8_t F1TS_surfaceType(int8_t carIdx, int8_t tyre)
+{
+	return telemetry->packet_manager()->car_telemetry_data()->surfaceType(carIdx, tyre);
+}
+
+uint32_t F1TS_buttonStatus()
+{
+	return telemetry->packet_manager()->car_telemetry_data()->buttonStatus();
+}
+
+uint8_t F1TS_mfdPanelIndex()
+{
+	return telemetry->packet_manager()->car_telemetry_data()->mfdPanelIndex();
+}
+
+uint8_t F1TS_mfdPanelIndexSecondaryPlayer()
+{
+	return telemetry->packet_manager()->car_telemetry_data()->mfdPanelIndexSecondaryPlayer();
+}
+
+int8_t F1TS_suggestedGear()
+{
+	return telemetry->packet_manager()->car_telemetry_data()->suggestedGear();
+}

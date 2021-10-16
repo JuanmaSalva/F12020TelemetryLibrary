@@ -60,8 +60,11 @@
     <ClInclude Include="Src\Packets\PacketParticipantsData.h">
       <Filter>Archivos de encabezado\Packets</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Packets\PacketCarSetups.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Src\Packets\PacketCarSetupsData.h">
+      <Filter>Archivos de encabezado\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Packets\PacketTelemetryData.h">
+      <Filter>Archivos de encabezado\Packets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -98,8 +101,11 @@
     <ClCompile Include="Src\Packets\PacketParticipantsData.cpp">
       <Filter>Archivos de origen\Packets</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Packets\PacketCarSetups.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="Src\Packets\PacketCarSetupsData.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketTelemetryData.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

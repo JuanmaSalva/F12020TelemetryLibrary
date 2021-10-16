@@ -5,7 +5,8 @@
 #include "PacketMotionData.h"
 #include "PacketEventData.h"
 #include "PacketParticipantsData.h"
-#include "PacketCarSetups.h"
+#include "PacketCarSetupsData.h"
+#include "PacketTelemetryData.h"
 
 
 static class PacketManager
@@ -22,6 +23,7 @@ public:
 	PacketEventData* event_data() const { return eventData_; }
 	PacketParticipantsData* participants_data() const { return participantsData_; }
 	PacketCarSetupData* car_setup_data() const { return carSetupsData_; }
+	PacketCarTelemetryData* car_telemetry_data() const { return carTelemetryData_; }
 
 private:
 	PacketHeader pHeader;
@@ -32,6 +34,7 @@ private:
 	PacketEventData* eventData_;
 	PacketParticipantsData* participantsData_;
 	PacketCarSetupData* carSetupsData_;
+	PacketCarTelemetryData* carTelemetryData_;
 
 	
 	void procesPacket(char* buf) const;

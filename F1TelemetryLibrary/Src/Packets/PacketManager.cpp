@@ -11,6 +11,7 @@ PacketManager::PacketManager()
     eventData_ = new PacketEventData();
     participantsData_ = new PacketParticipantsData();
     carSetupsData_ = new PacketCarSetupData();
+    carTelemetryData_ = new PacketCarTelemetryData();
 }
 
 PacketManager::~PacketManager()
@@ -58,6 +59,7 @@ void PacketManager::procesPacket(char* buf) const
         break;
     case 6:
         std::cout << "Car Telemetry data\n";
+        carTelemetryData_->update(buf);
         break;
     case 7:
         std::cout << "Car Status data\n";

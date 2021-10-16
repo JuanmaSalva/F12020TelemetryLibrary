@@ -125,7 +125,7 @@ F1LIBRARY_EXPORTS float F1TS_yaw(int8_t carId);
 F1LIBRARY_EXPORTS float F1TS_pitch(int8_t carId);
 F1LIBRARY_EXPORTS float F1TS_roll(int8_t carId);
 
-F1LIBRARY_EXPORTS float F1TS_suspensionPositionRL();
+F1LIBRARY_EXPORTS float F1TS_suspensionPositionRL(); //TODO change RL, RR... for a tyreIdx
 F1LIBRARY_EXPORTS float F1TS_suspensionPositionRR();
 F1LIBRARY_EXPORTS float F1TS_suspensionPositionFL();
 F1LIBRARY_EXPORTS float F1TS_suspensionPositionFR();
@@ -222,3 +222,27 @@ F1LIBRARY_EXPORTS float F1TS_frontLeftTyrePressure(int8_t carIdx);
 F1LIBRARY_EXPORTS float F1TS_frontRightTyrePressure(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_ballast(int8_t carIdx);
 F1LIBRARY_EXPORTS float F1TS_fuelLoad(int8_t carIdx);
+
+
+
+//CAR TELEMETRY DATA
+F1LIBRARY_EXPORTS uint16_t F1TS_speed(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_throttle(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_steer(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_brake(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_clutch(int8_t carIdx);
+F1LIBRARY_EXPORTS int8_t F1TS_gear(int8_t carIdx);
+F1LIBRARY_EXPORTS uint16_t F1TS_engineRPM(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_drs(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_revLightsPercent(int8_t carIdx);
+F1LIBRARY_EXPORTS uint16_t F1TS_brakesTemperature(int8_t carIdx, int8_t tyre);
+F1LIBRARY_EXPORTS uint8_t F1TS_tyresSurfaceTemperature(int8_t carIdx, int8_t tyre);
+F1LIBRARY_EXPORTS uint8_t F1TS_tyresInnerTemperature(int8_t carIdx, int8_t tyre);
+F1LIBRARY_EXPORTS uint16_t F1TS_engineTemperature(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_tyresPressure(int8_t carIdx, int8_t tyre);
+F1LIBRARY_EXPORTS uint8_t F1TS_surfaceType(int8_t carIdx, int8_t tyre);
+
+F1LIBRARY_EXPORTS uint32_t F1TS_buttonStatus();
+F1LIBRARY_EXPORTS uint8_t F1TS_mfdPanelIndex();
+F1LIBRARY_EXPORTS uint8_t F1TS_mfdPanelIndexSecondaryPlayer();
+F1LIBRARY_EXPORTS int8_t F1TS_suggestedGear();

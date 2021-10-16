@@ -165,7 +165,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Src\Externs.h" />
-    <ClInclude Include="Src\Packets\PacketCarSetups.h" />
+    <ClInclude Include="Src\Packets\PacketCarSetupsData.h" />
     <ClInclude Include="Src\Packets\PacketEventData.h" />
     <ClInclude Include="Src\Packets\PacketHeader.h" />
     <ClInclude Include="Src\Packets\PacketLapData.h" />
@@ -173,6 +173,7 @@
     <ClInclude Include="Src\Packets\PacketMotionData.h" />
     <ClInclude Include="Src\Packets\PacketParticipantsData.h" />
     <ClInclude Include="Src\Packets\PacketSessionData.h" />
+    <ClInclude Include="Src\Packets\PacketTelemetryData.h" />
     <ClInclude Include="Src\TelemetryF1.h" />
   </ItemGroup>
   <ItemGroup>
@@ -184,7 +185,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Src\Externs.cpp" />
-    <ClCompile Include="Src\Packets\PacketCarSetups.cpp" />
+    <ClCompile Include="Src\Packets\PacketCarSetupsData.cpp" />
     <ClCompile Include="Src\Packets\PacketEventData.cpp" />
     <ClCompile Include="Src\Packets\PacketHeader.cpp" />
     <ClCompile Include="Src\Packets\PacketLapData.cpp" />
@@ -192,6 +193,7 @@
     <ClCompile Include="Src\Packets\PacketMotionData.cpp" />
     <ClCompile Include="Src\Packets\PacketParticipantsData.cpp" />
     <ClCompile Include="Src\Packets\PacketSessionData.cpp" />
+    <ClCompile Include="Src\Packets\PacketTelemetryData.cpp" />
     <ClCompile Include="Src\TelemetryF1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

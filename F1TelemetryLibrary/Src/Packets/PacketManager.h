@@ -9,6 +9,7 @@
 #include "PacketTelemetryData.h"
 #include "PacketCarStatusData.h"
 #include "PacketFinalClassificationData.h"
+#include "PacketLobbyInfoData.h"
 
 
 static class PacketManager
@@ -28,6 +29,7 @@ public:
 	PacketCarTelemetryData* car_telemetry_data() const { return carTelemetryData_; }
 	PacketCarStatusData* car_status_data() const { return carStatusData_; }
 	PacketFinalClassificationData* final_classification_data() const { return finalClassificationData_; }
+	PacketLobbyInfoData* lobby_info_data() const { return lobbyData_; }
 
 private:
 	PacketHeader pHeader;
@@ -41,7 +43,7 @@ private:
 	PacketCarTelemetryData* carTelemetryData_;
 	PacketCarStatusData* carStatusData_;
 	PacketFinalClassificationData* finalClassificationData_;
-
+	PacketLobbyInfoData* lobbyData_;
 	
 	void procesPacket(char* buf) const;
 };

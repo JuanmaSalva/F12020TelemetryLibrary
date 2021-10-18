@@ -292,3 +292,12 @@ F1LIBRARY_EXPORTS uint8_t F1TS_finalNumPenalties(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_finalNumTyreStints(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_finalTyreStintsActual(int8_t carIdx, int8_t stintIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_finalTyreStintsVisual(int8_t carIdx, int8_t stintIdx);
+
+
+//LOBBY INFO DATA
+F1LIBRARY_EXPORTS uint8_t F1TS_lobbyNumPlayers();
+F1LIBRARY_EXPORTS uint8_t F1TS_lobbyAiControlled(int8_t playerIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_lobbyTeamId(int8_t playerIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_lobbyNationality(int8_t playerIdx);
+F1LIBRARY_EXPORTS void F1TS_lobbyName(int8_t playerIdx, char* n);
+F1LIBRARY_EXPORTS uint8_t F1TS_lobbyReadyStatus(int8_t playerIdx);

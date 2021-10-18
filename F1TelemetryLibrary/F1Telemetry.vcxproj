@@ -171,6 +171,7 @@
     <ClInclude Include="Src\Packets\PacketFinalClassificationData.h" />
     <ClInclude Include="Src\Packets\PacketHeader.h" />
     <ClInclude Include="Src\Packets\PacketLapData.h" />
+    <ClInclude Include="Src\Packets\PacketLobbyInfoData.h" />
     <ClInclude Include="Src\Packets\PacketManager.h" />
     <ClInclude Include="Src\Packets\PacketMotionData.h" />
     <ClInclude Include="Src\Packets\PacketParticipantsData.h" />
@@ -193,6 +194,7 @@
     <ClCompile Include="Src\Packets\PacketFinalClassificationData.cpp" />
     <ClCompile Include="Src\Packets\PacketHeader.cpp" />
     <ClCompile Include="Src\Packets\PacketLapData.cpp" />
+    <ClCompile Include="Src\Packets\PacketLobbyInfoData.cpp" />
     <ClCompile Include="Src\Packets\PacketManager.cpp" />
     <ClCompile Include="Src\Packets\PacketMotionData.cpp" />
     <ClCompile Include="Src\Packets\PacketParticipantsData.cpp" />

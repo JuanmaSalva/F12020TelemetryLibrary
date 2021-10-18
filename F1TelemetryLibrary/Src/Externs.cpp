@@ -1118,3 +1118,33 @@ uint8_t F1TS_finalTyreStintsVisual(int8_t carIdx, int8_t stintIdx)
 {
 	return telemetry->packet_manager()->final_classification_data()->tyreStintsVisual(carIdx, stintIdx);
 }
+
+uint8_t F1TS_lobbyNumPlayers()
+{
+	return telemetry->packet_manager()->lobby_info_data()->lobbyNumPlayers();
+}
+
+uint8_t F1TS_lobbyAiControlled(int8_t playerIdx)
+{
+	return telemetry->packet_manager()->lobby_info_data()->lobbyAiControlled(playerIdx);
+}
+
+uint8_t F1TS_lobbyTeamId(int8_t playerIdx)
+{
+	return telemetry->packet_manager()->lobby_info_data()->lobbyTeamId(playerIdx);
+}
+
+uint8_t F1TS_lobbyNationality(int8_t playerIdx)
+{
+	return telemetry->packet_manager()->lobby_info_data()->lobbyNationality(playerIdx);
+}
+
+void F1TS_lobbyName(int8_t playerIdx, char* n)
+{
+	telemetry->packet_manager()->lobby_info_data()->lobbyName(playerIdx, n);
+}
+
+uint8_t F1TS_lobbyReadyStatus(int8_t playerIdx)
+{
+	return telemetry->packet_manager()->lobby_info_data()->lobbyReadyStatus(playerIdx);
+}

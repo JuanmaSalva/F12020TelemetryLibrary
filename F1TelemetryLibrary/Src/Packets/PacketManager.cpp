@@ -14,6 +14,7 @@ PacketManager::PacketManager()
     carTelemetryData_ = new PacketCarTelemetryData();
     carStatusData_ = new PacketCarStatusData();
     finalClassificationData_ = new PacketFinalClassificationData();
+    lobbyData_ = new PacketLobbyInfoData();
 }
 
 PacketManager::~PacketManager()
@@ -27,6 +28,7 @@ PacketManager::~PacketManager()
     delete carTelemetryData_;
     delete carStatusData_;
     delete finalClassificationData_;
+    delete lobbyData_;
 }
 
 void PacketManager::newPacket(char* buf)
@@ -81,6 +83,7 @@ void PacketManager::procesPacket(char* buf) const
         break;
     case 9:
         std::cout << "Lobby Info data\n";
+        lobbyData_->update(buf);
         break;
     }
 }

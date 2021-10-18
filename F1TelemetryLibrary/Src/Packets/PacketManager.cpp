@@ -12,11 +12,19 @@ PacketManager::PacketManager()
     participantsData_ = new PacketParticipantsData();
     carSetupsData_ = new PacketCarSetupData();
     carTelemetryData_ = new PacketCarTelemetryData();
+    carStatusData_ = new PacketCarStatusData();
 }
 
 PacketManager::~PacketManager()
 {
+    delete motionData_;
+    delete sessionData_;
     delete lapData_;
+    delete eventData_;
+    delete participantsData_;
+    delete carSetupsData_;
+    delete carTelemetryData_;
+    delete carStatusData_;
 }
 
 void PacketManager::newPacket(char* buf)
@@ -63,6 +71,7 @@ void PacketManager::procesPacket(char* buf) const
         break;
     case 7:
         std::cout << "Car Status data\n";
+        carStatusData_->update(buf);
         break;
     case 8:
         std::cout << "Final Classification data\n";

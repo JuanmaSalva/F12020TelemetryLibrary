@@ -1,7 +1,5 @@
 #include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
 #include "Externs.h"
-#include <utility>
-#include <limits.h>
 #include "TelemetryF1.h"
 
 void F1TS_startF1Telemetry()
@@ -15,9 +13,9 @@ void F1TS_startF1Telemetry()
 
 void F1TS_closeF1Telemetry()
 {
+	t.detach();
 	telemetry->end();
 	delete telemetry;
-	t.join();
 }
 
 bool F1TS_isReady()
@@ -909,4 +907,144 @@ uint8_t F1TS_mfdPanelIndexSecondaryPlayer()
 int8_t F1TS_suggestedGear()
 {
 	return telemetry->packet_manager()->car_telemetry_data()->suggestedGear();
+}
+
+uint8_t F1TS_tractionControl(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->tractionControl(carIdx);
+}
+
+uint8_t F1TS_antiLockBrakes(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->antiLockBrakes(carIdx);
+}
+
+uint8_t F1TS_fuelMix(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->fuelMix(carIdx);
+}
+
+uint8_t F1TS_frontBrakeBias(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->frontBrakeBias(carIdx);
+}
+
+uint8_t F1TS_pitLimiterStatus(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->pitLimiterStatus(carIdx);
+}
+
+float F1TS_fuelInTank(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->fuelInTank(carIdx);
+}
+
+float F1TS_fuelCapacity(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->fuelCapacity(carIdx);
+}
+
+float F1TS_fuelRemainingLaps(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->fuelRemainingLaps(carIdx);
+}
+
+uint16_t F1TS_maxRPM(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->maxRPM(carIdx);
+}
+
+uint16_t F1TS_idleRPM(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->idleRPM(carIdx);
+}
+
+uint8_t F1TS_maxGears(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->maxGears(carIdx);
+}
+
+uint8_t F1TS_drsAllowed(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->drsAllowed(carIdx);
+}
+
+uint16_t F1TS_drsActivationDistance(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->drsActivationDistance(carIdx);
+}
+
+uint8_t F1TS_tyresWear(int8_t carIdx, int8_t tyre)
+{
+	return telemetry->packet_manager()->car_status_data()->tyresWear(carIdx, tyre);
+}
+
+uint8_t F1TS_actualTyreCompound(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->actualTyreCompound(carIdx);
+}
+
+uint8_t F1TS_visualTyreCompound(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->visualTyreCompound(carIdx);
+}
+
+uint8_t F1TS_tyresAgeLaps(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->tyresAgeLaps(carIdx);
+}
+
+uint8_t F1TS_tyresDamage(int8_t carIdx, int8_t tyre)
+{
+	return telemetry->packet_manager()->car_status_data()->tyresDamage(carIdx, tyre);
+}
+
+uint8_t F1TS_frontLeftWingDamage(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->frontLeftWingDamage(carIdx);
+}
+
+uint8_t F1TS_frontRightWingDamage(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->frontRightWingDamage(carIdx);
+}
+
+uint8_t F1TS_rearWingDamage(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->rearWingDamage(carIdx);
+}
+
+uint8_t F1TS_drsFault(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->drsFault(carIdx);
+}
+
+uint8_t F1TS_gearBoxDamage(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->gearBoxDamage(carIdx);
+}
+
+float F1TS_ersStoreEnergy(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->ersStoreEnergy(carIdx);
+}
+
+uint8_t F1TS_ersDeployMode(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->ersDeployMode(carIdx);
+}
+
+float F1TS_ersHarvestedThisLapMGUK(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->ersHarvestedThisLapMGUK(carIdx);
+}
+
+float F1TS_ersHarvestedThisLapMGUH(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->ersHarvestedThisLapMGUH(carIdx);
+}
+
+float F1TS_ersDeployedThisLap(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->ersDeployedThisLap(carIdx);
 }

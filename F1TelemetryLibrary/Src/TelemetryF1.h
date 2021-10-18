@@ -13,7 +13,7 @@ class TelemetryF1
 {
 public:
 	TelemetryF1();
-	~TelemetryF1() {};
+	~TelemetryF1();
 	bool open_socket();
 	void start();
 	void end();

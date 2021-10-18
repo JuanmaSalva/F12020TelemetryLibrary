@@ -35,8 +35,6 @@ std::thread t;
 TelemetryF1* telemetry;
 bool isReady_ = false;
 
-F1LIBRARY_EXPORTS void pruebaCallback(void (*f)());
-
 //GENERAL.
 F1LIBRARY_EXPORTS void F1TS_startF1Telemetry();
 F1LIBRARY_EXPORTS void F1TS_closeF1Telemetry();
@@ -246,3 +244,34 @@ F1LIBRARY_EXPORTS uint32_t F1TS_buttonStatus();
 F1LIBRARY_EXPORTS uint8_t F1TS_mfdPanelIndex();
 F1LIBRARY_EXPORTS uint8_t F1TS_mfdPanelIndexSecondaryPlayer();
 F1LIBRARY_EXPORTS int8_t F1TS_suggestedGear();
+
+
+//CAR STATUS DATA
+F1LIBRARY_EXPORTS uint8_t F1TS_tractionControl(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_antiLockBrakes(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_fuelMix(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_frontBrakeBias(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_pitLimiterStatus(int8_t carIdx) ;
+F1LIBRARY_EXPORTS float F1TS_fuelInTank(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_fuelCapacity(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_fuelRemainingLaps(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint16_t F1TS_maxRPM(int8_t carIdx);
+F1LIBRARY_EXPORTS uint16_t F1TS_idleRPM(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_maxGears(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_drsAllowed(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint16_t F1TS_drsActivationDistance(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_tyresWear(int8_t carIdx, int8_t tyre);
+F1LIBRARY_EXPORTS uint8_t F1TS_actualTyreCompound(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_visualTyreCompound(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_tyresAgeLaps(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_tyresDamage(int8_t carIdx, int8_t tyre);
+F1LIBRARY_EXPORTS uint8_t F1TS_frontLeftWingDamage(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_frontRightWingDamage(int8_t carIdx) ;
+F1LIBRARY_EXPORTS uint8_t F1TS_rearWingDamage(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_drsFault(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_gearBoxDamage(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_ersStoreEnergy(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_ersDeployMode(int8_t carIdx) ;
+F1LIBRARY_EXPORTS float F1TS_ersHarvestedThisLapMGUK(int8_t carIdx) ;
+F1LIBRARY_EXPORTS float F1TS_ersHarvestedThisLapMGUH(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_ersDeployedThisLap(int8_t carIdx);

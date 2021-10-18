@@ -9,6 +9,11 @@ TelemetryF1::TelemetryF1()
 	packet_manager_ = new PacketManager();
 }
 
+TelemetryF1::~TelemetryF1()
+{
+	close_socket();
+}
+
 bool TelemetryF1::open_socket()
 {
 	WSADATA data;

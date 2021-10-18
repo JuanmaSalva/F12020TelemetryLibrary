@@ -166,6 +166,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Src\Externs.h" />
     <ClInclude Include="Src\Packets\PacketCarSetupsData.h" />
+    <ClInclude Include="Src\Packets\PacketCarStatusData.h" />
     <ClInclude Include="Src\Packets\PacketEventData.h" />
     <ClInclude Include="Src\Packets\PacketHeader.h" />
     <ClInclude Include="Src\Packets\PacketLapData.h" />
@@ -186,6 +187,7 @@
     </ClCompile>
     <ClCompile Include="Src\Externs.cpp" />
     <ClCompile Include="Src\Packets\PacketCarSetupsData.cpp" />
+    <ClCompile Include="Src\Packets\PacketCarStatusData.cpp" />
     <ClCompile Include="Src\Packets\PacketEventData.cpp" />
     <ClCompile Include="Src\Packets\PacketHeader.cpp" />
     <ClCompile Include="Src\Packets\PacketLapData.cpp" />

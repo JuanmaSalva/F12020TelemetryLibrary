@@ -275,3 +275,20 @@ F1LIBRARY_EXPORTS uint8_t F1TS_ersDeployMode(int8_t carIdx) ;
 F1LIBRARY_EXPORTS float F1TS_ersHarvestedThisLapMGUK(int8_t carIdx) ;
 F1LIBRARY_EXPORTS float F1TS_ersHarvestedThisLapMGUH(int8_t carIdx);
 F1LIBRARY_EXPORTS float F1TS_ersDeployedThisLap(int8_t carIdx);
+
+
+//FINAL CLASSIFICATION DATA
+F1LIBRARY_EXPORTS uint8_t F1TS_numCarsFinished();
+F1LIBRARY_EXPORTS uint8_t F1TS_finalPosition(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalNumLaps(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalGridPosition(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalPoints(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalNumPitStops(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalResultStatus(int8_t carIdx);
+F1LIBRARY_EXPORTS float  F1TS_finalBestLapTime(int8_t carIdx);
+F1LIBRARY_EXPORTS double F1TS_finalTotalRaceTime(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalPenaltiesTime(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalNumPenalties(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalNumTyreStints(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalTyreStintsActual(int8_t carIdx, int8_t stintIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_finalTyreStintsVisual(int8_t carIdx, int8_t stintIdx);

@@ -1048,3 +1048,73 @@ float F1TS_ersDeployedThisLap(int8_t carIdx)
 {
 	return telemetry->packet_manager()->car_status_data()->ersDeployedThisLap(carIdx);
 }
+
+uint8_t F1TS_numCarsFinished()
+{
+	return telemetry->packet_manager()->final_classification_data()->numCarsFinished();
+}
+
+uint8_t F1TS_finalPosition(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->position(carIdx);
+}
+
+uint8_t F1TS_finalNumLaps(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->numLaps(carIdx);
+}
+
+uint8_t F1TS_finalGridPosition(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->gridPosition(carIdx);
+}
+
+uint8_t F1TS_finalPoints(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->points(carIdx);
+}
+
+uint8_t F1TS_finalNumPitStops(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->numPitStops(carIdx);
+}
+
+uint8_t F1TS_finalResultStatus(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->resultStatus(carIdx);
+}
+
+float F1TS_finalBestLapTime(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->bestLapTime(carIdx);
+}
+
+double F1TS_finalTotalRaceTime(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->totalRaceTime(carIdx);
+}
+
+uint8_t F1TS_finalPenaltiesTime(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->penaltiesTime(carIdx);
+}
+
+uint8_t F1TS_finalNumPenalties(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->numPenalties(carIdx);
+}
+
+uint8_t F1TS_finalNumTyreStints(int8_t carIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->numTyreStints(carIdx);
+}
+
+uint8_t F1TS_finalTyreStintsActual(int8_t carIdx, int8_t stintIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->tyreStintsActual(carIdx, stintIdx);
+}
+
+uint8_t F1TS_finalTyreStintsVisual(int8_t carIdx, int8_t stintIdx)
+{
+	return telemetry->packet_manager()->final_classification_data()->tyreStintsVisual(carIdx, stintIdx);
+}

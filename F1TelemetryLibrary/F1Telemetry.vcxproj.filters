@@ -67,7 +67,10 @@
       <Filter>Archivos de encabezado\Packets</Filter>
     </ClInclude>
     <ClInclude Include="Src\Packets\PacketCarStatusData.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Packets\PacketFinalClassificationData.h">
+      <Filter>Archivos de encabezado\Packets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -111,7 +114,10 @@
       <Filter>Archivos de origen\Packets</Filter>
     </ClCompile>
     <ClCompile Include="Src\Packets\PacketCarStatusData.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Packets\PacketFinalClassificationData.cpp">
+      <Filter>Archivos de origen\Packets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

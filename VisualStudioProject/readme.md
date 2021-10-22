@@ -1,4 +1,4 @@
-#F1TS VisualStudio 2019 project
+# F1TS VisualStudio 2019 project
 
 Yo can use this project as you wish.
 All temporary files will automaticly go inside a bin file in the Solution directory,

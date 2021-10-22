@@ -1,4 +1,4 @@
-#F1TS 2020
+# F1TS 2020
 
 Welcome to F1TS (F1 Telemetry System), the open source telemetry system for the
 formula 1 2020 game made by Codemasters.
@@ -10,14 +10,14 @@ You have 3 options when using this library:
 * <strong>Get the source code</strong>, import it to your own project and use it/modify it as you wish. (/SourceCode/)
 * <strong>Use my visual studio project</strong> and start from there. (/VisualStudioProject/)
 
-###Still in progress!!
+### Still in progress!!
 This is not a beta, this isn't even a alpha! It's lower than that. There are hundreds of methods and
 testing each and every one with the game takes time, a lot of it. This should work but there will be 
 bug for sure. If you find one, let me know and y will fix it.
 
 In every directory there is another .md that will showw you how to use it.
 
-###How to use
+### How to use
 For any of the three options to use this code, the use of the library is the same.
 To start the telemetry system you will need to call F1TS_startF1Telemetry or F1Ts_startF1TelemetryThread.
 I recomend you to use the second one, is easier to use. It will create a thread and run on the background 
@@ -34,5 +34,5 @@ If the library is correctly used, there is no need to worry, only tons of teleme
 from the game ^_^
 
 
-####Aditional info
+#### Aditional info
 If you use any of this code give me a mention  ＜（＾－＾）＞

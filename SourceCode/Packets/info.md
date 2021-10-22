@@ -1,4 +1,4 @@
-##Packed IDs
+## Packed IDs
 
 ---
 
@@ -17,7 +17,7 @@ Lobby Info = 9 = Information about players in a multiplayer lobby
 ---
 ---
 
-##Tyre indicies
+## Tyre indicies
 0 = Rear left
 1 = Rear right
 2 = Front left
@@ -26,10 +26,10 @@ Lobby Info = 9 = Information about players in a multiplayer lobby
 ---
 ---
 
-##Event data
+## Event data
 
 ---
-####String codes
+#### String codes
 SSTA = Session started\
 SEND = Session ended\
 FTLP = Fasted lap\
@@ -43,7 +43,7 @@ PENA = Panalty issued\
 SPTP = Speed trap triggered
 
 ---
-####Penalty types
+#### Penalty types
 0 = Drive through\
 1 = Stop Go\
 2 = Grid penalty\
@@ -64,7 +64,7 @@ SPTP = Speed trap triggered
 17 = Black flag timer
 
 ---
-####Infringement types
+#### Infringement types
 0 Blocking by slow driving\
 1 = Blocking by wrong way driving\
 2 = Reversing off the start line\
@@ -120,7 +120,11 @@ SPTP = Speed trap triggered
 
 ---
 ---
-##Track Ids
+
+## Track Ids
+
+---
+
 0 = Melburne\
 1 = Paul Ricard\
 2 = Shangai\
@@ -151,7 +155,11 @@ SPTP = Speed trap triggered
 
 ---
 ---
-##Team IDs
+
+## Team IDs
+
+---
+
 0 = Mercedes\
 1 = Ferrari\
 2 = Red Bull Racing\
@@ -212,7 +220,9 @@ SPTP = Speed trap triggered
 
 ---
 ---
-##Drivers IDs
+## Drivers IDs
+
+---
 
 0 Carlos Sainz\
 1  =Daniil Kvyat\
@@ -297,6 +307,8 @@ SPTP = Speed trap triggered
 ---
 
 ## Nationality IDs
+
+---
 
 1 = American\
 2 = Argentinean\
@@ -392,6 +404,8 @@ SPTP = Speed trap triggered
 
 ## Surface types
 
+---
+
 0 = Tarmac\
 1 = Rumble strip\
 2 = Concrete\
@@ -410,6 +424,8 @@ SPTP = Speed trap triggered
 
 ##Button flags
 
+---
+
 0x0001 = Cross or A\
 0x0002 = Triangle or Y\
 0x0004 = Circle or B\
@@ -425,85 +441,3 @@ SPTP = Speed trap triggered
 0x1000 = R2 or RT\
 0x2000 = Left Stick Click\
 0x4000 = Right Stick Click
-
----
----
-
-##Penalty types
-
-0 = Drive through\
-1 = Stop Go\
-2 = Grid penalty\
-3 = Penalty reminder\
-4 = Time penalty\
-5 = Warning\
-6 = Disqualified\
-7 = Removed from formation lap\
-8 = Parked too long timer\
-9 = Tyre regulations\
-10 = This lap invalidated\
-11 = This and next lap invalidated\
-12 = This lap invalidated without reason\
-13 = This and next lap invalidated without reason\
-14 = This and previous lap invalidated\
-15 = This and previous lap invalidated without reason\
-16 = Retired\
-17 = Black flag timer
-
----
----
-
-##Infrigement type
-
-0 = Blocking by slow driving\
-1 = Blocking by wrong way driving\
-2 = Reversing off the start line\
-3 = Big Collision\
-4 = Small Collision\
-5 = Collision failed to hand back position single\
-6 = Collision failed to hand back position multiple\
-7 = Corner cutting gained time\
-8 = Corner cutting overtake single\
-9 = Corner cutting overtake multiple\
-10 = Crossed pit exit lane\
-11 = Ignoring blue flags\
-12 = Ignoring yellow flags\
-13 = Ignoring drive through\
-14 = Too many drive throughs\
-15 = Drive through reminder serve within n laps\
-16 = Drive through reminder serve this lap\
-17 = Pit lane speeding\
-18 = Parked for too long\
-19 = Ignoring tyre regulations\
-20 = Too many penalties\
-21 = Multiple warnings\
-22 = Approaching disqualification\
-23 = Tyre regulations select single\
-24 = Tyre regulations select multiple\
-25 = Lap invalidated corner cutting\
-26 = Lap invalidated running wide\
-27 = Corner cutting ran wide gained time minor\
-28 = Corner cutting ran wide gained time significant\
-29 = Corner cutting ran wide gained time extreme\
-30 = Lap invalidated wall riding\
-31 = Lap invalidated flashback used\
-32 = Lap invalidated reset to track\
-33 = Blocking the pitlane\
-34 = Jump start\
-35 = Safety car to car collision\
-36 = Safety car illegal overtake\
-37 = Safety car exceeding allowed pace\
-38 = Virtual safety car exceeding allowed pace\
-39 = Formation lap below allowed speed\
-40 = Retired mechanical failure\
-41 = Retired terminally damaged\
-42 = Safety car falling too far back\
-43 = Black flag timer\
-44 = Unserved stop go penalty\
-45 = Unserved drive through penalty\
-46 = Engine component change\
-47 = Gearbox change\
-48 = League grid penalty\
-49 = Retry penalty\
-50 = Illegal time gain\
-51 = Mandatory pitstop

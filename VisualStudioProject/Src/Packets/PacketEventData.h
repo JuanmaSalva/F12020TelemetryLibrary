@@ -80,6 +80,8 @@ private:
 	void fromBin(char*& data);
 
 public:
+	PacketEventData();
+	
 	void update(char*& data);
 
 	void sessionStartedCallBack(void (*f)()) { m_sessionStartedCallBack = f; }

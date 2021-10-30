@@ -2,6 +2,10 @@
 #include "F1TS_Externs.h"
 #include "TelemetryF1.h"
 
+
+//TODO invitar a mis compañeros al repo que toca
+
+
 void F1TS_startF1Telemetry()
 {
 	isReady_ = false;

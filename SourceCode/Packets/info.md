@@ -26,6 +26,33 @@ Lobby Info = 9 = Information about players in a multiplayer lobby
 ---
 ---
 
+## Tyre compunds 
+
+---
+
+F1 Modern:
+16 = C5
+17 = C4
+18 = C3
+19 = C2
+20 = C1
+7 = inter
+8 = wet
+
+F1 Classic:
+9 = dry
+10 = wet
+
+F2 :
+11 = super soft
+12 = soft
+13 = medium
+14 = hard
+15 = wet
+
+---
+---
+
 ## Event data
 
 ---
@@ -422,7 +449,7 @@ SPTP = Speed trap triggered
 ---
 ---
 
-##Button flags
+## Button flags
 
 ---
 

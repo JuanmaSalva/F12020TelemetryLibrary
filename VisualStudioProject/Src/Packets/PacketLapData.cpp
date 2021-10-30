@@ -37,10 +37,16 @@ void LapData::fromBin(char*& data)
     memcpy(&m_resultStatus, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 }
 
+PacketLapData::PacketLapData()
+{
+	for (LapData& i : m_lapData)
+		i = LapData();
+}
+
 void PacketLapData::update(char*& data)
 {
-    for (int i = 0; i < 22; i++) {
-        m_lapData[i] = LapData();
-        m_lapData[i].fromBin(data);
+    for (LapData& i : m_lapData)
+    {
+	    i.fromBin(data);
     }
 }

@@ -37,21 +37,28 @@ void PacketSessionData::fromBin(char*& data)
     memcpy(&m_sliProNativeSupport, data, sizeof(uint8_t)); data += sizeof(uint8_t);
     memcpy(&m_numMarshalZones, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 
-    for (MarshalZone marshal_zone : m_marshalZones)
+
+    for (MarshalZone& m_marshalZone : m_marshalZones)
     {
-        marshal_zone = MarshalZone();
-        marshal_zone.fromBin(data);
+	    m_marshalZone.fromBin(data);
     }
 
     memcpy(&m_safetyCarStatus, data, sizeof(uint8_t)); data += sizeof(uint8_t);
     memcpy(&m_networkGame, data, sizeof(uint8_t)); data += sizeof(uint8_t);
     memcpy(&m_numWeatherForecastSamples, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 
-    for (WeatherForecastSample weather_forecast_sample : m_weatherForecastSamples)
-    {
-        weather_forecast_sample = WeatherForecastSample();
-        weather_forecast_sample.fromBin(data);
-    }
+
+    for (WeatherForecastSample& m_weatherForecastSample : m_weatherForecastSamples)
+	    m_weatherForecastSample.fromBin(data);
+}
+
+PacketSessionData::PacketSessionData()
+{
+    for (MarshalZone& m_marshalZone : m_marshalZones)
+	    m_marshalZone = MarshalZone();
+
+    for (WeatherForecastSample& m_weatherForecastSample : m_weatherForecastSamples)
+	    m_weatherForecastSample = WeatherForecastSample();
 }
 
 void PacketSessionData::update(char*& data)

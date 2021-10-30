@@ -1,6 +1,20 @@
 #include "pch.h"
 #include "PacketTelemetryData.h"
 
+CarTelemetryData::CarTelemetryData()
+{
+	for (uint16_t& i : m_brakesTemperature)
+		i = 0;
+	for (uint8_t& i : m_tyresSurfaceTemperature)
+		i = 0;
+	for (uint8_t& i : m_tyresInnerTemperature)
+		i = 0;
+	for (float& i : m_tyresPressure)
+		i = 0.0;
+	for (uint8_t& i : m_surfaceType)
+		i = 0;
+}
+
 void CarTelemetryData::fromBin(char*& data)
 {
 	memcpy(&m_speed, data, sizeof(uint16_t)); data += sizeof(uint16_t);
@@ -29,13 +43,16 @@ void PacketCarTelemetryData::fromBin(char*& data)
 	memcpy(&m_suggestedGear, data, sizeof(int8_t)); data += sizeof(int8_t);
 }
 
+PacketCarTelemetryData::PacketCarTelemetryData()
+{
+	for (CarTelemetryData& i : m_carTelemetryData)
+		i = CarTelemetryData();
+}
+
 void PacketCarTelemetryData::update(char*& data)
 {
-	for (CarTelemetryData car_telemetry_data : m_carTelemetryData)
-	{
-		car_telemetry_data = CarTelemetryData();
-		car_telemetry_data.fromBin(data);
-	}
+	for (CarTelemetryData& i : m_carTelemetryData)
+		i.fromBin(data);
 
 	fromBin(data);
 }

@@ -53,6 +53,8 @@ private:
     float       m_ersDeployedThisLap;       // ERS energy deployed this lap
 
 public:
+    CarStatusData();
+	
     void fromBin(char*& data);
 
     uint8_t tractionControl() const {return m_tractionControl;}
@@ -91,6 +93,8 @@ private:
     CarStatusData	m_carStatusData[22];
 
 public:
+    PacketCarStatusData();
+	
     void update(char*& data);
 
     uint8_t tractionControl(int8_t carIdx) const { return m_carStatusData[carIdx].tractionControl(); }

@@ -1,6 +1,15 @@
 #include "pch.h"
 #include "PacketCarStatusData.h"
 
+CarStatusData::CarStatusData()
+{
+	for (int i = 0; i < 4; i++)
+		m_tyresWear[4] = uint8_t();
+	
+	for (int i = 0; i < 4; i++)
+		m_tyresDamage[4] = uint8_t();
+}
+
 void CarStatusData::fromBin(char*& data)
 {
 	memcpy(&m_tractionControl, data, sizeof(uint8_t)); data += sizeof(uint8_t);
@@ -38,11 +47,14 @@ void CarStatusData::fromBin(char*& data)
 	
 }
 
+PacketCarStatusData::PacketCarStatusData()
+{
+	for (CarStatusData& i : m_carStatusData)
+		i = CarStatusData();
+}
+
 void PacketCarStatusData::update(char*& data)
 {
-	for(CarStatusData status_data: m_carStatusData)
-	{
-		status_data = CarStatusData();
-		status_data.fromBin(data);
-	}
+	for (CarStatusData& i : m_carStatusData)
+		i.fromBin(data);
 }

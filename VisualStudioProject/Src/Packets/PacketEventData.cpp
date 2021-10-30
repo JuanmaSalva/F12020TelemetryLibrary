@@ -66,6 +66,12 @@ void PacketEventData::fromBin(char*& data)
     else std::cout << "Event data packet received but not identified" << std::endl;
 }
 
+PacketEventData::PacketEventData()
+{
+    for (uint8_t& i : m_eventStringCode)
+	    i = 0;
+}
+
 void PacketEventData::update(char*& data)
 {
     fromBin(data);

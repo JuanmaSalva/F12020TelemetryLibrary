@@ -64,6 +64,8 @@ private:
     CarSetupData    m_carSetups[22];
 
 public:
+    PacketCarSetupData();
+	
     void update(char*& data);
 
     uint8_t frontWing(int8_t carIdx) const { return m_carSetups[carIdx].frontWing(); }

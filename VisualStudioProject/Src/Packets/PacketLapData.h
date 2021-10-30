@@ -79,6 +79,8 @@ private:
 	LapData m_lapData[22];        // Lap data for all cars on track
 
 public:
+	PacketLapData();
+	
 	void update(char*& data);
 
 	float lastTimeLap(int8_t carId) const { return m_lapData[carId].lastLapTime(); }

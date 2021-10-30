@@ -45,13 +45,27 @@ void PacketMotionData::fromBin(char*& data)
     memcpy(&m_frontWheelsAngle, data, sizeof(float)); data += sizeof(float);
 }
 
+PacketMotionData::PacketMotionData()
+{
+    for (float& i : m_suspensionPosition)
+	    i = 0.0;
+    for (float& i : m_suspensionVelocity)
+	    i = 0.0;
+    for (float& i : m_suspensionAcceleration)
+	    i = 0.0;
+    for (float& i : m_wheelSpeed)
+	    i = 0.0;
+    for (float& i : m_wheelSlip)
+	    i = 0.0;
+	
+    for (CarMotionData& i : m_carMotionData)
+	    i = CarMotionData();
+}
+
 void PacketMotionData::update(char*& data)
 {
-    for (CarMotionData motion_data : m_carMotionData)
-    {
-        motion_data = CarMotionData();
-        motion_data.fromBin(data);
-    }
+    for (CarMotionData& i : m_carMotionData)
+	    i.fromBin(data);
 
     fromBin(data);
 }

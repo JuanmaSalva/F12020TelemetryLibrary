@@ -27,11 +27,12 @@ void CarMotionData::fromBin(char*& data)
 
 void PacketMotionData::fromBin(char*& data)
 {
-    for (float& i : m_suspensionPosition) memcpy(&i, data, sizeof(float)); data += sizeof(float);
-    for (float& i : m_suspensionVelocity) memcpy(&i, data, sizeof(float)); data += sizeof(float);
-    for (float& i : m_suspensionAcceleration) memcpy(&i, data, sizeof(float)); data += sizeof(float);
-    for (float& i : m_wheelSpeed) memcpy(&i, data, sizeof(float)); data += sizeof(float);
-    for (float& i : m_wheelSlip) memcpy(&i, data, sizeof(float)); data += sizeof(float);
+
+    memcpy(&m_suspensionPosition, data, sizeof(float) * 4); data += sizeof(float) * 4;
+    memcpy(&m_suspensionVelocity, data, sizeof(float) * 4); data += sizeof(float) * 4;
+    memcpy(&m_suspensionAcceleration, data, sizeof(float) * 4); data += sizeof(float) * 4;
+    memcpy(&m_wheelSpeed, data, sizeof(float) * 4); data += sizeof(float) * 4;
+    memcpy(&m_wheelSlip, data, sizeof(float) * 4); data += sizeof(float) * 4;
 
     memcpy(&m_localVelocityX, data, sizeof(float)); data += sizeof(float);
     memcpy(&m_localVelocityY, data, sizeof(float)); data += sizeof(float);

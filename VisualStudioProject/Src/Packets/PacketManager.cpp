@@ -83,6 +83,7 @@ void PacketManager::procesPacket(char*& buf)
 	case 6:
 	{
 		std::cout << "Car Telemetry data\n";
+		//memcpy(&carTelemetryData_, buf, sizeof(PacketCarTelemetryData)); buf += sizeof(PacketCarTelemetryData);
 		carTelemetryData_->update(buf);
 		break;
 	}

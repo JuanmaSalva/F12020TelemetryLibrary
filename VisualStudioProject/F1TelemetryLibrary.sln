@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "F1Telemetry", "F1TelemetryLibrary\F1Telemetry.vcxproj", "{1682639E-AA6B-4096-8DBB-04EC30E1FD30}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "Tests\Tests.vcxproj", "{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{1682639E-AA6B-4096-8DBB-04EC30E1FD30}.Release|x64.Build.0 = Release|x64
 		{1682639E-AA6B-4096-8DBB-04EC30E1FD30}.Release|x86.ActiveCfg = Release|Win32
 		{1682639E-AA6B-4096-8DBB-04EC30E1FD30}.Release|x86.Build.0 = Release|Win32
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Debug|x64.ActiveCfg = Debug|x64
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Debug|x64.Build.0 = Debug|x64
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Debug|x86.ActiveCfg = Debug|Win32
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Debug|x86.Build.0 = Debug|Win32
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Release|x64.ActiveCfg = Release|x64
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Release|x64.Build.0 = Release|x64
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Release|x86.ActiveCfg = Release|Win32
+		{440AAFAC-C4CE-4E03-A5A9-BA2D961F5395}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

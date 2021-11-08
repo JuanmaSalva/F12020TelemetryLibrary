@@ -25,8 +25,9 @@ void FinalClassificationData::fromBin(char*& data)
 	memcpy(&m_penaltiesTime, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_numPenalties, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_numTyreStints, data, sizeof(uint8_t)); data += sizeof(uint8_t);
-	for (uint8_t& i : m_tyreStintsActual) memcpy(&i, data, sizeof(uint8_t)); data += sizeof(uint8_t);
-	for (uint8_t& i : m_tyreStintsVisual) memcpy(&i, data, sizeof(uint8_t)); data += sizeof(uint8_t);
+
+	memcpy(&m_tyreStintsActual, data, sizeof(uint8_t) * 8); data += sizeof(uint8_t) * 8;
+	memcpy(&m_tyreStintsVisual, data, sizeof(uint8_t) * 8); data += sizeof(uint8_t) * 8;
 }
 
 void PacketFinalClassificationData::fromBin(char*& data)

@@ -2,6 +2,8 @@
 #include "F1TS_Externs.h"
 #include "TelemetryF1.h"
 
+
+
 void F1TS_startF1Telemetry()
 {
 	isReady_ = false;
@@ -36,6 +38,14 @@ void F1Ts_startF1TelemetryThread()
 uint8_t F1Ts_playerCarIndex()
 {
 	return telemetry->packet_manager()->playerCarIndex();
+}
+
+void F1TS_packetSizes()
+{
+	std::cout << (sizeof(uint16_t) + sizeof(uint8_t) * 6 + sizeof(uint64_t) + sizeof(float) + sizeof(uint32_t)) << std::endl;
+	std::cout << "PacketHeader: " << sizeof(PacketHeader) << std::endl;
+	std::cout << "PacketCarTelemetryData: " << sizeof(PacketCarTelemetryData) << std::endl;
+	std::cout << "Header + PacketCarTelemetryData: " << (sizeof(PacketCarTelemetryData) + sizeof(PacketHeader)) << std::endl;
 }
 
 float F1TS_lastTimeLap(int8_t carId)

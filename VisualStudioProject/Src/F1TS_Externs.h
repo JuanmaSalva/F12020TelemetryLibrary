@@ -42,6 +42,7 @@ F1LIBRARY_EXPORTS void F1TS_closeF1Telemetry();
 F1LIBRARY_EXPORTS bool F1TS_isReady();
 F1LIBRARY_EXPORTS void F1Ts_startF1TelemetryThread();
 F1LIBRARY_EXPORTS uint8_t F1Ts_playerCarIndex();
+F1LIBRARY_EXPORTS void F1TS_packetSizes();
 
 
 //LAP DATA	

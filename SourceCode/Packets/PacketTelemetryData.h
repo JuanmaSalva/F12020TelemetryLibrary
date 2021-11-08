@@ -21,6 +21,8 @@ private:
 	uint8_t     m_surfaceType[4];                // Driving surface, see info.md
 
 public:
+	CarTelemetryData();
+	
 	void fromBin(char*& data);
 
 	uint16_t speed() const { return m_speed; }
@@ -59,6 +61,8 @@ private:
 
 	void fromBin(char*& data);
 public:
+	PacketCarTelemetryData();
+	
 	void update(char*& data);
 
 	uint16_t speed(int8_t carIdx) const {return m_carTelemetryData[carIdx].speed();}

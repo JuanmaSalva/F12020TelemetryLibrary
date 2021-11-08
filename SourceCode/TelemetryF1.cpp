@@ -69,7 +69,7 @@ void TelemetryF1::start()
 
 void TelemetryF1::end()
 {
-	cycle = true; //vovo
+	cycle = false;
 }
 
 bool TelemetryF1::close_socket()

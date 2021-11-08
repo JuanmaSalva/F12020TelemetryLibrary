@@ -3,15 +3,13 @@
 #include "TelemetryF1.h"
 
 
-//TODO invitar a mis compañeros al repo que toca
-
 
 void F1TS_startF1Telemetry()
 {
 	isReady_ = false;
 	telemetry = new TelemetryF1();
 	isReady_ = true;
-	telemetry->open_socket();	
+	telemetry->open_socket();
 	telemetry->start();
 }
 
@@ -30,11 +28,24 @@ bool F1TS_isReady()
 void F1Ts_startF1TelemetryThread()
 {
 	t = std::thread(F1TS_startF1Telemetry);
-	while(!F1TS_isReady())
+	while (!F1TS_isReady())
 	{
 		std::cout << "Waiting for the socket to open" << std::endl;
 	}
 	std::cout << "Socket opened" << std::endl;
+}
+
+uint8_t F1Ts_playerCarIndex()
+{
+	return telemetry->packet_manager()->playerCarIndex();
+}
+
+void F1TS_packetSizes()
+{
+	std::cout << (sizeof(uint16_t) + sizeof(uint8_t) * 6 + sizeof(uint64_t) + sizeof(float) + sizeof(uint32_t)) << std::endl;
+	std::cout << "PacketHeader: " << sizeof(PacketHeader) << std::endl;
+	std::cout << "PacketCarTelemetryData: " << sizeof(PacketCarTelemetryData) << std::endl;
+	std::cout << "Header + PacketCarTelemetryData: " << (sizeof(PacketCarTelemetryData) + sizeof(PacketHeader)) << std::endl;
 }
 
 float F1TS_lastTimeLap(int8_t carId)
@@ -180,7 +191,7 @@ uint8_t F1TS_weather()
 
 int8_t F1TS_trackTemperature()
 {
-	return telemetry->packet_manager()->session_data()->trackTemperature();	
+	return telemetry->packet_manager()->session_data()->trackTemperature();
 }
 
 int8_t F1TS_airTemperature()
@@ -468,57 +479,57 @@ float F1TS_frontWheelsAngle()
 	return telemetry->packet_manager()->motion_data()->frontWheelsAngle();
 }
 
-void F1TS_sessionStartedCallBack(void(* f)())
+void F1TS_sessionStartedCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->sessionStartedCallBack(f);
 }
 
-void F1TS_sessionEndedCallBack(void(* f)())
+void F1TS_sessionEndedCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->sessionEndedCallBack(f);
 }
 
-void F1TS_fastestLapCallBack(void(* f)())
+void F1TS_fastestLapCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->fastestLapCallBack(f);
 }
 
-void F1TS_retirementCallBack(void(* f)())
+void F1TS_retirementCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->retirementCallBack(f);
 }
 
-void F1TS_DRSenabledCallBack(void(* f)())
+void F1TS_DRSenabledCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->DRSenabledCallBack(f);
 }
 
-void F1TS_DRSdisabledCallBack(void(* f)())
+void F1TS_DRSdisabledCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->DRSdisabledCallBack(f);
 }
 
-void F1TS_teamMateInPitsCallBack(void(* f)())
+void F1TS_teamMateInPitsCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->teamMateInPitsCallBack(f);
 }
 
-void F1TS_chequeredFlagCallBack(void(* f)())
+void F1TS_chequeredFlagCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->chequeredFlagCallBack(f);
 }
 
-void F1TS_raceWinnerCallBack(void(* f)())
+void F1TS_raceWinnerCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->raceWinnerCallBack(f);
 }
 
-void F1TS_penaltyIssuedCallBack(void(* f)())
+void F1TS_penaltyIssuedCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->penaltyIssuedCallBack(f);
 }
 
-void F1TS_speedTrapTriggeredCallBack(void(* f)())
+void F1TS_speedTrapTriggeredCallBack(void(*f)())
 {
 	return telemetry->packet_manager()->event_data()->speedTrapTriggeredCallBack(f);
 }
@@ -588,7 +599,7 @@ uint8_t F1TS_speedTrapVehicleIdx()
 	return telemetry->packet_manager()->event_data()->speedTrapVehicleIdx();
 }
 
-uint8_t F1TS_speedTrapSpeed()
+float F1TS_speedTrapSpeed()
 {
 	return telemetry->packet_manager()->event_data()->speedTrapSpeed();
 }
@@ -713,24 +724,15 @@ uint8_t F1TS_brakeBias(int8_t carIdx)
 	return telemetry->packet_manager()->car_setup_data()->brakeBias(carIdx);
 }
 
-float F1TS_rearLeftTyrePressure(int8_t carIdx)
+float F1TS_tyrePressure(int8_t carIdx, int8_t tyre)
 {
+	switch (tyre) {
+	case 0:return telemetry->packet_manager()->car_setup_data()->rearLeftTyrePressure(carIdx);
+	case 1:return telemetry->packet_manager()->car_setup_data()->rearRightTyrePressure(carIdx);
+	case 2:return telemetry->packet_manager()->car_setup_data()->frontLeftTyrePressure(carIdx);
+	case 3:return telemetry->packet_manager()->car_setup_data()->frontRightTyrePressure(carIdx);
+	}
 	return telemetry->packet_manager()->car_setup_data()->rearLeftTyrePressure(carIdx);
-}
-
-float F1TS_rearRightTyrePressure(int8_t carIdx)
-{
-	return telemetry->packet_manager()->car_setup_data()->rearRightTyrePressure(carIdx);
-}
-
-float F1TS_frontLeftTyrePressure(int8_t carIdx)
-{
-	return telemetry->packet_manager()->car_setup_data()->frontLeftTyrePressure(carIdx);
-}
-
-float F1TS_frontRightTyrePressure(int8_t carIdx)
-{
-	return telemetry->packet_manager()->car_setup_data()->frontRightTyrePressure(carIdx);
 }
 
 uint8_t F1TS_ballast(int8_t carIdx)

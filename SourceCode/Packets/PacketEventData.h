@@ -80,6 +80,8 @@ private:
 	void fromBin(char*& data);
 
 public:
+	PacketEventData();
+	
 	void update(char*& data);
 
 	void sessionStartedCallBack(void (*f)()) { m_sessionStartedCallBack = f; }
@@ -113,5 +115,5 @@ public:
 	uint8_t penaltyPlacesGained() const { return m_eventDetails.Penalty.placesGained; }
 
 	uint8_t speedTrapVehicleIdx() const { return m_eventDetails.SpeedTrap.vehicleIdx; }
-	uint8_t speedTrapSpeed() const { return m_eventDetails.SpeedTrap.speed; }
+	float speedTrapSpeed() const { return m_eventDetails.SpeedTrap.speed; }
 };

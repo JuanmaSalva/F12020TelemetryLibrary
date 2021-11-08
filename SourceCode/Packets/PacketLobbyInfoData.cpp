@@ -15,12 +15,16 @@ void PacketLobbyInfoData::fromBin(char*& data)
 	memcpy(&m_numPlayers, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 }
 
+PacketLobbyInfoData::PacketLobbyInfoData()
+{
+	for (LobbyInfoData& m_lobbyPlayer : m_lobbyPlayers)
+		m_lobbyPlayer = LobbyInfoData();
+}
+
 void PacketLobbyInfoData::update(char*& data)
 {
 	fromBin(data);
-	for(LobbyInfoData lobby_info: m_lobbyPlayers)
-	{
-		lobby_info = LobbyInfoData();
-		lobby_info.fromBin(data);
-	}
+
+	for (LobbyInfoData& m_lobbyPlayer : m_lobbyPlayers)
+		m_lobbyPlayer.fromBin(data);
 }

@@ -41,6 +41,8 @@ F1LIBRARY_EXPORTS void F1TS_startF1Telemetry();
 F1LIBRARY_EXPORTS void F1TS_closeF1Telemetry();
 F1LIBRARY_EXPORTS bool F1TS_isReady();
 F1LIBRARY_EXPORTS void F1Ts_startF1TelemetryThread();
+F1LIBRARY_EXPORTS uint8_t F1Ts_playerCarIndex();
+F1LIBRARY_EXPORTS void F1TS_packetSizes();
 
 
 //LAP DATA	
@@ -168,7 +170,7 @@ F1LIBRARY_EXPORTS uint8_t F1TS_penaltyTime();
 F1LIBRARY_EXPORTS uint8_t F1TS_penaltyLapNum();
 F1LIBRARY_EXPORTS uint8_t F1TS_penaltyPlacesGained();
 F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapVehicleIdx();
-F1LIBRARY_EXPORTS uint8_t F1TS_speedTrapSpeed();
+F1LIBRARY_EXPORTS float F1TS_speedTrapSpeed();
 
 
 //PARTICIPANTS DATA
@@ -200,10 +202,7 @@ F1LIBRARY_EXPORTS uint8_t F1TS_frontSuspensionHeight(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_rearSuspensionHeight(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_brakePressure(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_brakeBias(int8_t carIdx);
-F1LIBRARY_EXPORTS float F1TS_rearLeftTyrePressure(int8_t carIdx);
-F1LIBRARY_EXPORTS float F1TS_rearRightTyrePressure(int8_t carIdx);
-F1LIBRARY_EXPORTS float F1TS_frontLeftTyrePressure(int8_t carIdx);
-F1LIBRARY_EXPORTS float F1TS_frontRightTyrePressure(int8_t carIdx);
+F1LIBRARY_EXPORTS float F1TS_tyrePressure(int8_t carIdx, int8_t tyre);
 F1LIBRARY_EXPORTS uint8_t F1TS_ballast(int8_t carIdx);
 F1LIBRARY_EXPORTS float F1TS_fuelLoad(int8_t carIdx);
 

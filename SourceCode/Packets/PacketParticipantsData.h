@@ -35,6 +35,8 @@ private:
 	void fromBin(char*& data);
 
 public:
+	PacketParticipantsData();
+	
 	void update(char*& data);
 	
 	uint8_t numActiveCars() { return m_numActiveCars; }

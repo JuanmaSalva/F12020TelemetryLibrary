@@ -31,6 +31,8 @@ public:
 	PacketFinalClassificationData* final_classification_data() const { return finalClassificationData_; }
 	PacketLobbyInfoData* lobby_info_data() const { return lobbyData_; }
 
+	uint8_t playerCarIndex() { return m_playerCarIndex; }
+
 private:
 	PacketHeader pHeader;
 	
@@ -44,6 +46,8 @@ private:
 	PacketCarStatusData* carStatusData_;
 	PacketFinalClassificationData* finalClassificationData_;
 	PacketLobbyInfoData* lobbyData_;
+
+	uint8_t m_playerCarIndex;
 	
-	void procesPacket(char* buf) const;
+	void procesPacket(char* &buf);
 };

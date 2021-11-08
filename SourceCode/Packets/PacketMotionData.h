@@ -52,6 +52,7 @@ private:
     void fromBin(char*& data);
 
 public:
+    PacketMotionData();
 	
     void update(char*& data);
         	

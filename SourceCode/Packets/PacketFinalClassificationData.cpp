@@ -1,6 +1,15 @@
 #include "pch.h"
 #include "PacketFinalClassificationData.h"
 
+FinalClassificationData::FinalClassificationData()
+{
+	for (uint8_t& i : m_tyreStintsActual)
+		i = 0;
+	
+	for (uint8_t& i : m_tyreStintsVisual)
+		i = 0;
+}
+
 void FinalClassificationData::fromBin(char*& data)
 {
 	memcpy(&m_position, data, sizeof(uint8_t)); data += sizeof(uint8_t);
@@ -16,8 +25,9 @@ void FinalClassificationData::fromBin(char*& data)
 	memcpy(&m_penaltiesTime, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_numPenalties, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_numTyreStints, data, sizeof(uint8_t)); data += sizeof(uint8_t);
-	for (uint8_t& i : m_tyreStintsActual) memcpy(&i, data, sizeof(uint8_t)); data += sizeof(uint8_t);
-	for (uint8_t& i : m_tyreStintsVisual) memcpy(&i, data, sizeof(uint8_t)); data += sizeof(uint8_t);
+
+	memcpy(&m_tyreStintsActual, data, sizeof(uint8_t) * 8); data += sizeof(uint8_t) * 8;
+	memcpy(&m_tyreStintsVisual, data, sizeof(uint8_t) * 8); data += sizeof(uint8_t) * 8;
 }
 
 void PacketFinalClassificationData::fromBin(char*& data)
@@ -25,13 +35,16 @@ void PacketFinalClassificationData::fromBin(char*& data)
 	memcpy(&m_numCars, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 }
 
+PacketFinalClassificationData::PacketFinalClassificationData()
+{
+	for (FinalClassificationData& i : m_classificationData)
+		i = FinalClassificationData();
+}
+
 void PacketFinalClassificationData::update(char*& data)
 {
 	fromBin(data);
-	
-	for(FinalClassificationData final_classification: m_classificationData)
-	{
-		final_classification = FinalClassificationData();
-		final_classification.fromBin(data);
-	}
+
+	for (FinalClassificationData& i : m_classificationData)
+		i.fromBin(data);
 }

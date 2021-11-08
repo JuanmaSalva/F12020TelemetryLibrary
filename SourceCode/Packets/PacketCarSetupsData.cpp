@@ -32,11 +32,14 @@ void CarSetupData::fromBin(char*& data)
 	memcpy(&m_fuelLoad, data, sizeof(float)); data += sizeof(float);
 }
 
+PacketCarSetupData::PacketCarSetupData()
+{
+	for (CarSetupData& m_carSetup : m_carSetups)
+		m_carSetup = CarSetupData();
+}
+
 void PacketCarSetupData::update(char*& data)
 {
-	for(CarSetupData car_setup : m_carSetups)
-	{
-		car_setup = CarSetupData();
-		car_setup.fromBin(data);
-	}
+	for (CarSetupData& m_carSetup : m_carSetups)
+		m_carSetup.fromBin(data);
 }

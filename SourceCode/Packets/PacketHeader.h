@@ -49,3 +49,4 @@ public:
 
 	uint8_t secondaryPlayerCarIndex()const { return m_secondaryPlayerCarIndex; }
 };
+

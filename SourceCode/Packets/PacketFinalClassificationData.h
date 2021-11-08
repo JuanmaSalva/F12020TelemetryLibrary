@@ -21,6 +21,8 @@ private:
 	uint8_t     m_tyreStintsVisual[8];   // Visual tyres used by this driver
 
 public:
+	FinalClassificationData();
+	
 	void fromBin(char*& data);
 
 	uint8_t position() const { return m_position; }
@@ -37,6 +39,8 @@ public:
 	uint8_t tyreStintsActual(int8_t stintIdx) const { return m_tyreStintsActual[stintIdx]; }
 	uint8_t tyreStintsVisual(int8_t stintIdx) const { return m_tyreStintsVisual[stintIdx]; }
 };
+
+
 struct PacketFinalClassificationData
 {
 private:
@@ -46,6 +50,8 @@ private:
 	void fromBin(char*& data);
 
 public:
+	PacketFinalClassificationData();
+	
 	void update(char*& data);
 
 	uint8_t numCarsFinished() { return m_numCars; }

@@ -3,11 +3,8 @@
 
 void PacketEventData::fromBin(char*& data)
 {
-    for (uint8_t sc : m_eventStringCode)
-    {
-        sc = uint8_t();
-        memcpy(&sc, data, sizeof(uint8_t)); data += sizeof(uint8_t);
-    }
+    memcpy(&m_eventStringCode, data, sizeof(uint8_t) * 4); data += sizeof(uint8_t) * 4;
+
     std::string code = "0000";
     code[0] = m_eventStringCode[0];
     code[1] = m_eventStringCode[1];
@@ -64,6 +61,12 @@ void PacketEventData::fromBin(char*& data)
         m_speedTrapTriggeredCallBack();
     }
     else std::cout << "Event data packet received but not identified" << std::endl;
+}
+
+PacketEventData::PacketEventData()
+{
+    for (uint8_t& i : m_eventStringCode)
+	    i = 0;
 }
 
 void PacketEventData::update(char*& data)

@@ -1,6 +1,15 @@
 #include "pch.h"
 #include "PacketCarStatusData.h"
 
+CarStatusData::CarStatusData()
+{
+	for (int i = 0; i < 4; i++)
+		m_tyresWear[4] = uint8_t();
+	
+	for (int i = 0; i < 4; i++)
+		m_tyresDamage[4] = uint8_t();
+}
+
 void CarStatusData::fromBin(char*& data)
 {
 	memcpy(&m_tractionControl, data, sizeof(uint8_t)); data += sizeof(uint8_t);
@@ -17,11 +26,12 @@ void CarStatusData::fromBin(char*& data)
 	memcpy(&m_drsAllowed, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 
 	memcpy(&m_drsActivationDistance, data, sizeof(uint16_t)); data += sizeof(uint16_t);
-	for (uint8_t& i : m_tyresWear) memcpy(&i, data, sizeof(uint8_t)); data += sizeof(uint8_t);
+
+	memcpy(&m_tyresWear, data, sizeof(uint16_t) * 4); data += sizeof(uint16_t) * 4;
 	memcpy(&m_actualTyreCompound, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_visualTyreCompound, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_tyresAgeLaps, data, sizeof(uint8_t)); data += sizeof(uint8_t);
-	for (uint8_t& i : m_tyresDamage) memcpy(&i, data, sizeof(uint8_t)); data += sizeof(uint8_t);
+	memcpy(&m_tyresDamage, data, sizeof(uint16_t) * 4); data += sizeof(uint16_t) * 4;
 	memcpy(&m_frontLeftWingDamage, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_frontRightWingDamage, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_rearWingDamage, data, sizeof(uint8_t)); data += sizeof(uint8_t);
@@ -38,11 +48,14 @@ void CarStatusData::fromBin(char*& data)
 	
 }
 
+PacketCarStatusData::PacketCarStatusData()
+{
+	for (CarStatusData& i : m_carStatusData)
+		i = CarStatusData();
+}
+
 void PacketCarStatusData::update(char*& data)
 {
-	for(CarStatusData status_data: m_carStatusData)
-	{
-		status_data = CarStatusData();
-		status_data.fromBin(data);
-	}
+	for (CarStatusData& i : m_carStatusData)
+		i.fromBin(data);
 }

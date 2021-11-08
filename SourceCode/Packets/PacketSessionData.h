@@ -70,6 +70,8 @@ private:
     void fromBin(char*& data);
 
 public:
+    PacketSessionData();
+	
     void update(char*& data);
 
     uint8_t weather()  const { return m_weather; }

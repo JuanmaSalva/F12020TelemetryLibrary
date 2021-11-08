@@ -30,6 +30,8 @@ private:
     void fromBin(char*& data);
 
 public:
+    PacketLobbyInfoData();
+	
     void update(char*& data);
 
     uint8_t lobbyNumPlayers() const { return m_numPlayers; }

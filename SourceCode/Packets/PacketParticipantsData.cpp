@@ -17,13 +17,16 @@ void PacketParticipantsData::fromBin(char*& data)
 	memcpy(&m_numActiveCars, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 }
 
+PacketParticipantsData::PacketParticipantsData()
+{
+	for (ParticipantData& m_participant : m_participants)
+		m_participant = ParticipantData();	
+}
+
 void PacketParticipantsData::update(char*& data)
 {
 	fromBin(data);
 
-	for(ParticipantData participant_data: m_participants)
-	{
-		participant_data = ParticipantData();
-		participant_data.fromBin(data);
-	}
+	for (ParticipantData& m_participant : m_participants)
+		m_participant.fromBin(data);
 }

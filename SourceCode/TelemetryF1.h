@@ -15,6 +15,7 @@ public:
 	void start();
 	void end();
 	bool close_socket();
+	bool hasEnded();
 
 	PacketManager* packet_manager();
 
@@ -30,4 +31,6 @@ private:
 	int clientLength;
 
 	PacketManager* packet_manager_;
+
+	bool hasEnded_;
 };

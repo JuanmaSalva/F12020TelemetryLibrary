@@ -1,5 +1,6 @@
 #pragma once
 #include "iostream"
+#include <atomic>
 
 struct MarshalZone
 {
@@ -39,6 +40,8 @@ public:
 struct PacketSessionData
 {
 private:
+
+	
     uint8_t           m_weather;                        // Weather - 0 = clear, 1 = light cloud, 2 = overcast
 														// 3 = light rain, 4 = heavy rain, 5 = storm
     int8_t	          m_trackTemperature;                     // Track temp. in degrees celsius

@@ -40,7 +40,6 @@ private:
 	uint8_t    m_resultStatus;              // Result status - 0 = invalid, 1 = inactive, 2 = active
 											// 3 = finished, 4 = disqualified, 5 = not classified
 											// 6 = retired
-
 public:
 	void fromBin(char*& data);
 

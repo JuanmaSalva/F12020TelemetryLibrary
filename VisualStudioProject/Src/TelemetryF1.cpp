@@ -5,6 +5,7 @@
 TelemetryF1::TelemetryF1()
 {
 	packet_manager_ = new PacketManager();
+	hasEnded_ = false;
 }
 
 TelemetryF1::~TelemetryF1()
@@ -65,6 +66,7 @@ void TelemetryF1::start()
 	}
 	
 	close_socket();
+	hasEnded_ = true;
 }
 
 void TelemetryF1::end()
@@ -79,6 +81,11 @@ bool TelemetryF1::close_socket()
 	WSACleanup();
 
 	return true;
+}
+
+bool TelemetryF1::hasEnded()
+{
+	return hasEnded_;
 }
 
 PacketManager* TelemetryF1::packet_manager()

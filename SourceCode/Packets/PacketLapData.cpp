@@ -22,8 +22,8 @@ void LapData::fromBin(char*& data)
     memcpy(&m_bestOverallSector3TimeInMS, data, sizeof(uint16_t)); data += sizeof(uint16_t);
     memcpy(&m_bestOverallSector3LapNum, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 
-    memcpy(&m_totalDistance, data, sizeof(float)); data += sizeof(float);
     memcpy(&m_lapDistance, data, sizeof(float)); data += sizeof(float);
+    memcpy(&m_totalDistance, data, sizeof(float)); data += sizeof(float);
     memcpy(&m_safetyCarDelta, data, sizeof(float)); data += sizeof(float);
 
     memcpy(&m_carPosition, data, sizeof(uint8_t)); data += sizeof(uint8_t);
@@ -39,8 +39,8 @@ void LapData::fromBin(char*& data)
 
 PacketLapData::PacketLapData()
 {
-	for (LapData& i : m_lapData)
-		i = LapData();
+    for (LapData& i : m_lapData)
+       i = LapData();
 }
 
 void PacketLapData::update(char*& data)

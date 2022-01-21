@@ -35,11 +35,13 @@ class TelemetryF1;
 std::thread t;
 TelemetryF1* telemetry;
 bool isReady_ = false;
+bool isClosed_ = false;
 
 //GENERAL.
 F1LIBRARY_EXPORTS void F1TS_startF1Telemetry();
 F1LIBRARY_EXPORTS void F1TS_closeF1Telemetry();
 F1LIBRARY_EXPORTS bool F1TS_isReady();
+F1LIBRARY_EXPORTS bool F1TS_isClosed();
 F1LIBRARY_EXPORTS void F1Ts_startF1TelemetryThread();
 F1LIBRARY_EXPORTS uint8_t F1Ts_playerCarIndex();
 F1LIBRARY_EXPORTS void F1TS_packetSizes();

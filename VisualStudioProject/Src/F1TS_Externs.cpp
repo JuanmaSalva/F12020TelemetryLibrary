@@ -20,11 +20,17 @@ void F1TS_closeF1Telemetry()
 	while (!telemetry->hasEnded())
 		;
 	delete telemetry;
+	isClosed_ = true;
 }
 
 bool F1TS_isReady()
 {
 	return isReady_;
+}
+
+bool F1TS_isClosed()
+{
+	return isClosed_;
 }
 
 void F1Ts_startF1TelemetryThread()

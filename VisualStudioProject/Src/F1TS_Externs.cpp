@@ -15,10 +15,8 @@ void F1TS_startF1Telemetry()
 
 void F1TS_closeF1Telemetry()
 {
-	t.detach();
 	telemetry->end();
-	while (!telemetry->hasEnded())
-		;
+	t.join();
 	delete telemetry;
 	isClosed_ = true;
 }

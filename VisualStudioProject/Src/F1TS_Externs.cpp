@@ -6,11 +6,14 @@
 
 void F1TS_startF1Telemetry()
 {
+	isReady_ = true;
+	telemetry->start();
+}
+
+bool F1TS_openSocket() {
 	isReady_ = false;
 	telemetry = new TelemetryF1();
-	isReady_ = true;
-	telemetry->open_socket();
-	telemetry->start();
+	return telemetry->open_socket();
 }
 
 void F1TS_closeF1Telemetry()
@@ -31,7 +34,7 @@ bool F1TS_isClosed()
 	return isClosed_;
 }
 
-void F1Ts_startF1TelemetryThread()
+void F1TS_startF1TelemetryThread()
 {
 	t = std::thread(F1TS_startF1Telemetry);
 	while (!F1TS_isReady())

@@ -25,9 +25,8 @@ void metodo2(char*& dato)
 
 int main()
 {
-	std::cout << sizeof(float) << std::endl;
-	F1TS_packetSizes();
-	F1Ts_startF1TelemetryThread();
+	F1TS_openSocket();
+	F1TS_startF1TelemetryThread();
 
 	while (!F1TS_isReady())
 	{
@@ -35,25 +34,8 @@ int main()
 	}
 
 
+	std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 	
-	while (true)
-	{
-		//std::cout << "-------------------------------------" << std::endl;
-		for(int i=0;i<22;i++)
-		{
-			std::cout << F1TS_speed(i) << "  ";
-		}
-		std::cout << std::endl;
-	}
 	
 	F1TS_closeF1Telemetry();
-	
-	
-	//char d[] = "aaaabbbbcccc";
-	//char* data =  &d[0];
-
-
-	//metodo1(data);
-	//metodo2(data);
-	//metodo3(data);
 }

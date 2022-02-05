@@ -39,7 +39,6 @@ bool isClosed_ = false;
 
 //GENERAL.
 F1LIBRARY_EXPORTS void F1TS_startF1Telemetry();
-F1LIBRARY_EXPORTS bool F1TS_openSocket();
 F1LIBRARY_EXPORTS void F1TS_closeF1Telemetry();
 F1LIBRARY_EXPORTS bool F1TS_isReady();
 F1LIBRARY_EXPORTS bool F1TS_isClosed();

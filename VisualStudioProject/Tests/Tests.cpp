@@ -25,7 +25,6 @@ void metodo2(char*& dato)
 
 int main()
 {
-	F1TS_openSocket();
 	F1TS_startF1TelemetryThread();
 
 	while (!F1TS_isReady())

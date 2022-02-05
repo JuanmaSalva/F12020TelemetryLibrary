@@ -6,20 +6,19 @@
 
 void F1TS_startF1Telemetry()
 {
-	isReady_ = true;
-	telemetry->start();
-}
-
-bool F1TS_openSocket() {
 	isReady_ = false;
 	telemetry = new TelemetryF1();
-	return telemetry->open_socket();
+	if (telemetry->open_socket() == false) {
+		std::cout << "Sometihng went wrong\n";
+		return;
+	}
+	isReady_ = true;
+	telemetry->start();
 }
 
 void F1TS_closeF1Telemetry()
 {
 	telemetry->end();
-	//std::this_thread::sleep_for(std::chrono::milliseconds(1010));
 	
 	while (!telemetry->hasEnded())
 		std::cout << "Waiting for telemetry to end\n";

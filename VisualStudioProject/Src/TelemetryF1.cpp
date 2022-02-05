@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "TelemetryF1.h"
+#include <thread>
 
 
 TelemetryF1::TelemetryF1()
@@ -11,7 +12,6 @@ TelemetryF1::TelemetryF1()
 TelemetryF1::~TelemetryF1()
 {
 	delete packet_manager_;
-	close_socket();
 }
 
 
@@ -56,17 +56,19 @@ void TelemetryF1::start()
 	//main loop
 	while (cycle)
 	{
-		int bytes = recvfrom(sock, buf, 4096, 0, (sockaddr*)&client, &clientLength);
-		std::cout << "Mensaje recibido: " << bytes << "\n";
-		packetsRecv++;
+		//int bytes = recvfrom(sock, buf, 4096, 0, (sockaddr*)&client, &clientLength);
+		//std::cout << "Mensaje recibido: " << bytes << "\n";
+		//packetsRecv++;
 
-		if (bytes == SOCKET_ERROR) {
-			std::cout << "Error on recv\n";
-		}
-		else
-		{
-			packet_manager_->newPacket(buf);
-		}
+		//if (bytes == SOCKET_ERROR) {
+		//	std::cout << "Error on recv\n";
+		//}
+		//else
+		//{
+		//	packet_manager_->newPacket(buf);
+		//}
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
 	}
 	
 	close_socket();

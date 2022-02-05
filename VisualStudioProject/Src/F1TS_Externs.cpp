@@ -19,7 +19,13 @@ bool F1TS_openSocket() {
 void F1TS_closeF1Telemetry()
 {
 	telemetry->end();
-	t.join();
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1010));
+	
+	while (!telemetry->hasEnded())
+		std::cout << "Waiting for telemetry to end\n";
+	
+	if(t.joinable())
+		t.join();
 	delete telemetry;
 	isClosed_ = true;
 }

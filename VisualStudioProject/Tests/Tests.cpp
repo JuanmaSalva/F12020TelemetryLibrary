@@ -31,10 +31,6 @@ int main()
 	{
 		std::cout << "Waiting for the socket to open" << std::endl;
 	}
-
-
-	std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-	
 	
 	F1TS_closeF1Telemetry();
 }

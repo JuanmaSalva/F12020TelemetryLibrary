@@ -49,7 +49,7 @@ void F1TS_startF1TelemetryThread()
 	std::cout << "Socket opened" << std::endl;
 }
 
-uint8_t F1Ts_playerCarIndex()
+uint8_t F1TS_playerCarIndex()
 {
 	return telemetry->packet_manager()->playerCarIndex();
 }

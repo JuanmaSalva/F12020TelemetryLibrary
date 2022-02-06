@@ -8,18 +8,25 @@ void F1TS_startF1Telemetry()
 {
 	isReady_ = false;
 	telemetry = new TelemetryF1();
+	if (telemetry->open_socket() == false) {
+		std::cout << "Sometihng went wrong\n";
+		return;
+	}
 	isReady_ = true;
-	telemetry->open_socket();
 	telemetry->start();
 }
 
 void F1TS_closeF1Telemetry()
 {
-	t.detach();
 	telemetry->end();
+	
 	while (!telemetry->hasEnded())
-		;
+		std::cout << "Waiting for telemetry to end\n";
+	
+	if(t.joinable())
+		t.join();
 	delete telemetry;
+	isClosed_ = true;
 }
 
 bool F1TS_isReady()
@@ -27,7 +34,12 @@ bool F1TS_isReady()
 	return isReady_;
 }
 
-void F1Ts_startF1TelemetryThread()
+bool F1TS_isClosed()
+{
+	return isClosed_;
+}
+
+void F1TS_startF1TelemetryThread()
 {
 	t = std::thread(F1TS_startF1Telemetry);
 	while (!F1TS_isReady())
@@ -37,7 +49,7 @@ void F1Ts_startF1TelemetryThread()
 	std::cout << "Socket opened" << std::endl;
 }
 
-uint8_t F1Ts_playerCarIndex()
+uint8_t F1TS_playerCarIndex()
 {
 	return telemetry->packet_manager()->playerCarIndex();
 }

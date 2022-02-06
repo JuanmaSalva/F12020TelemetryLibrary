@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "TelemetryF1.h"
+#include <thread>
 
 
 TelemetryF1::TelemetryF1()
@@ -11,8 +12,8 @@ TelemetryF1::TelemetryF1()
 TelemetryF1::~TelemetryF1()
 {
 	delete packet_manager_;
-	close_socket();
 }
+
 
 bool TelemetryF1::open_socket()
 {
@@ -32,6 +33,9 @@ bool TelemetryF1::open_socket()
 	serverHint.sin_port = htons(20777);
 	inet_pton(AF_INET, "127.0.0.1", &serverHint.sin_addr);
 
+
+	DWORD timeout = 1000;
+	setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof timeout);
 
 	if (bind(sock, (sockaddr*)&serverHint, sizeof(serverHint)) == SOCKET_ERROR) {
 		std::cout << "Can't bind\n";

@@ -24,7 +24,7 @@ public:
 private:
 
 	int packetsRecv = 0;
-	bool cycle = true;
+	std::atomic<bool> cycle = true;
 
 	SOCKET sock;
 	sockaddr_in client;
@@ -32,5 +32,5 @@ private:
 
 	PacketManager* packet_manager_;
 
-	bool hasEnded_;
+	std::atomic<bool> hasEnded_;
 };

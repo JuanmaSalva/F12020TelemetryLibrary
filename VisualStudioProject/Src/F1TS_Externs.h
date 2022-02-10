@@ -159,6 +159,8 @@ F1LIBRARY_EXPORTS void F1TS_penaltyIssuedCallBack(void (*f)());
 F1LIBRARY_EXPORTS void F1TS_speedTrapTriggeredCallBack(void (*f)());
 
 
+F1LIBRARY_EXPORTS int8_t F1TS_lastEventReceived();
+
 F1LIBRARY_EXPORTS uint8_t F1TS_fastestLapVehicleIdx();
 F1LIBRARY_EXPORTS float F1TS_fastestLaplapTime();	
 F1LIBRARY_EXPORTS uint8_t F1TS_retirementVehicleIdx();	

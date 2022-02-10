@@ -548,6 +548,11 @@ void F1TS_speedTrapTriggeredCallBack(void(*f)())
 	return telemetry->packet_manager()->event_data()->speedTrapTriggeredCallBack(f);
 }
 
+int8_t F1TS_lastEventReceived()
+{
+	return telemetry->packet_manager()->event_data()->lastEventReceived();
+}
+
 uint8_t F1TS_fastestLapVehicleIdx()
 {
 	return telemetry->packet_manager()->event_data()->fastestLapVehicleIdx();

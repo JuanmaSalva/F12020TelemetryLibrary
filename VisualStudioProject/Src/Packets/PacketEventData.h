@@ -64,7 +64,9 @@ private:
 	EventDataDetails	m_eventDetails;       // Event details - should be interpreted differently
 											  // for each type
 
-	void(*m_sessionStartedCallBack)() = nullptr;
+	int8_t m_lastEvent = -1;
+
+	void (*m_sessionStartedCallBack)() = nullptr;
 	void(*m_sessionEndedCallBack)() = nullptr;
 	void(*m_fastestLapCallBack)() = nullptr;
 	void(*m_retirementCallBack)() = nullptr;
@@ -84,7 +86,7 @@ public:
 	
 	void update(char*& data);
 
-	void sessionStartedCallBack(void (*f)()) { m_sessionStartedCallBack = f; }
+	void sessionStartedCallBack(void (*f)()) { m_sessionStartedCallBack = f;  }
 	void sessionEndedCallBack(void (*f)()) { m_sessionEndedCallBack = f; }
 	void fastestLapCallBack(void (*f)()) { m_fastestLapCallBack = f; }
 	void retirementCallBack(void (*f)()) { m_retirementCallBack = f; }
@@ -96,6 +98,7 @@ public:
 	void penaltyIssuedCallBack(void (*f)()) { m_penaltyIssuedCallBack = f; }
 	void speedTrapTriggeredCallBack(void (*f)()) { m_speedTrapTriggeredCallBack = f; }
 
+	int8_t lastEventReceived() { return m_lastEvent; }
 	
 	uint8_t fastestLapVehicleIdx() const { return m_eventDetails.FastestLap.vehicleIdx; }
 	float fastestLaplapTime() const { return m_eventDetails.FastestLap.lapTime; }

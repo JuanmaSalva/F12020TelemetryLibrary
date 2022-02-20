@@ -27,7 +27,7 @@ void CarStatusData::fromBin(char*& data)
 
 	memcpy(&m_drsActivationDistance, data, sizeof(uint16_t)); data += sizeof(uint16_t);
 
-	memcpy(&m_tyresWear, data, sizeof(uint16_t) * 4); data += sizeof(uint16_t) * 4;
+	memcpy(&m_tyresWear, data, sizeof(uint8_t) * 4); data += sizeof(uint8_t) * 4;
 	memcpy(&m_actualTyreCompound, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_visualTyreCompound, data, sizeof(uint8_t)); data += sizeof(uint8_t);
 	memcpy(&m_tyresAgeLaps, data, sizeof(uint8_t)); data += sizeof(uint8_t);

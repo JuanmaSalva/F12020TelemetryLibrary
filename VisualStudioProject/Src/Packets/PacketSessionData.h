@@ -44,8 +44,8 @@ private:
 	
     uint8_t           m_weather;                        // Weather - 0 = clear, 1 = light cloud, 2 = overcast
 														// 3 = light rain, 4 = heavy rain, 5 = storm
-    int8_t	          m_trackTemperature;                     // Track temp. in degrees celsius
-    int8_t	          m_airTemperature;                       // Air temp. in degrees celsius
+    int8_t	          m_trackTemperature;               // Track temp. in degrees celsius
+    int8_t	          m_airTemperature;                 // Air temp. in degrees celsius
     uint8_t           m_totalLaps;                      // Total number of laps in this race
     uint16_t          m_trackLength;                    // Track length in metres
     uint8_t           m_sessionType;                    // 0 = unknown, 1 = P1, 2 = P2, 3 = P3, 4 = Short P
@@ -62,7 +62,7 @@ private:
     uint8_t           m_spectatorCarIndex;              // Index of the car being spectated
     uint8_t           m_sliProNativeSupport;	        // SLI Pro support, 0 = inactive, 1 = active
     uint8_t           m_numMarshalZones;                // Number of marshal zones to follow
-    MarshalZone       m_marshalZones[21];                 // List of marshal zones � max 21
+    MarshalZone       m_marshalZones[21];               // List of marshal zones � max 21
     uint8_t           m_safetyCarStatus;                // 0 = no safety car, 1 = full safety car
 														// 2 = virtual safety car
     uint8_t           m_networkGame;                    // 0 = offline, 1 = online

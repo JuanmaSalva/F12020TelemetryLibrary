@@ -21,7 +21,8 @@ void F1TS_closeF1Telemetry()
 	telemetry->end();
 	
 	while (!telemetry->hasEnded())
-		std::cout << "Waiting for telemetry to end\n";
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		//std::cout << "Waiting for telemetry to end\n";
 	
 	if(t.joinable())
 		t.join();

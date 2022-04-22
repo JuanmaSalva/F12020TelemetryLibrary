@@ -258,6 +258,7 @@ F1LIBRARY_EXPORTS uint8_t F1TS_frontLeftWingDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_frontRightWingDamage(int8_t carIdx) ;
 F1LIBRARY_EXPORTS uint8_t F1TS_rearWingDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_drsFault(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_engineDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_gearBoxDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS float F1TS_ersStoreEnergy(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_ersDeployMode(int8_t carIdx) ;

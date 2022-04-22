@@ -79,7 +79,8 @@ public:
     uint8_t frontRightWingDamage() const {return m_frontRightWingDamage;}
     uint8_t rearWingDamage() const {return m_rearWingDamage;}
     uint8_t drsFault() const {return m_drsFault;}
-    uint8_t gearBoxDamage() const {return m_gearBoxDamage;}
+    uint8_t engineDamage() const { return m_engineDamage; }
+    uint8_t gearBoxDamage() const { return m_gearBoxDamage; }
     float ersStoreEnergy() const {return m_ersStoreEnergy;}
     uint8_t ersDeployMode() const {return m_ersDeployMode;}
     float ersHarvestedThisLapMGUK() const {return m_ersHarvestedThisLapMGUK;}
@@ -119,6 +120,7 @@ public:
     uint8_t frontRightWingDamage(int8_t carIdx) const { return m_carStatusData[carIdx].frontRightWingDamage(); }
     uint8_t rearWingDamage(int8_t carIdx) const { return m_carStatusData[carIdx].rearWingDamage(); }
     uint8_t drsFault(int8_t carIdx) const { return m_carStatusData[carIdx].drsFault(); }
+    uint8_t engineDamage(int8_t carIdx) const { return m_carStatusData[carIdx].engineDamage(); }
     uint8_t gearBoxDamage(int8_t carIdx) const { return m_carStatusData[carIdx].gearBoxDamage(); }
     float ersStoreEnergy(int8_t carIdx) const { return m_carStatusData[carIdx].ersStoreEnergy(); }
     uint8_t ersDeployMode(int8_t carIdx) const { return m_carStatusData[carIdx].ersDeployMode(); }

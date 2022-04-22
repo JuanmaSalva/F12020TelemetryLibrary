@@ -970,6 +970,11 @@ uint8_t F1TS_drsFault(int8_t carIdx)
 	return telemetry->packet_manager()->car_status_data()->drsFault(carIdx);
 }
 
+uint8_t F1TS_engineDamage(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->engineDamage(carIdx);
+}
+
 uint8_t F1TS_gearBoxDamage(int8_t carIdx)
 {
 	return telemetry->packet_manager()->car_status_data()->gearBoxDamage(carIdx);

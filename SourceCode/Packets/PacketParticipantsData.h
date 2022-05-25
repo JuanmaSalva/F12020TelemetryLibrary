@@ -21,7 +21,7 @@ public:
 	uint8_t teamId() const { return m_teamId; }
 	uint8_t raceNumber() const { return m_raceNumber; }
 	uint8_t nationality() const { return m_nationality; }
-	void name(char * n) { n = m_name; }
+	void name(char n[]) { strcpy_s(n, 48, m_name); }
 	uint8_t yourTelemetry() const { return m_yourTelemetry; };
 };
 
@@ -46,6 +46,6 @@ public:
 	uint8_t teamId(uint8_t idx) const { return m_participants[idx].teamId(); }
 	uint8_t raceNumber(uint8_t idx) const { return m_participants[idx].raceNumber(); }
 	uint8_t nationality(uint8_t idx) const { return m_participants[idx].nationality(); }
-	void name(uint8_t idx,  char* n) { return m_participants[idx].name(n); }
+	void name(uint8_t idx, char n[]) { return m_participants[idx].name(n); }
 	uint8_t yourTelemetry(uint8_t idx) const { return m_participants[idx].yourTelemetry(); }
 };

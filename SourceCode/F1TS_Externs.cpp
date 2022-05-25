@@ -21,7 +21,8 @@ void F1TS_closeF1Telemetry()
 	telemetry->end();
 	
 	while (!telemetry->hasEnded())
-		std::cout << "Waiting for telemetry to end\n";
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		//std::cout << "Waiting for telemetry to end\n";
 	
 	if(t.joinable())
 		t.join();
@@ -548,6 +549,11 @@ void F1TS_speedTrapTriggeredCallBack(void(*f)())
 	return telemetry->packet_manager()->event_data()->speedTrapTriggeredCallBack(f);
 }
 
+int8_t F1TS_lastEventReceived()
+{
+	return telemetry->packet_manager()->event_data()->lastEventReceived();
+}
+
 uint8_t F1TS_fastestLapVehicleIdx()
 {
 	return telemetry->packet_manager()->event_data()->fastestLapVehicleIdx();
@@ -648,7 +654,7 @@ uint8_t F1TS_nationality(uint8_t idx)
 	return telemetry->packet_manager()->participants_data()->nationality(idx);
 }
 
-void F1TS_name(uint8_t idx, char* n)
+void F1TS_name(uint8_t idx, char n[])
 {
 	return telemetry->packet_manager()->participants_data()->name(idx, n);
 }
@@ -962,6 +968,11 @@ uint8_t F1TS_rearWingDamage(int8_t carIdx)
 uint8_t F1TS_drsFault(int8_t carIdx)
 {
 	return telemetry->packet_manager()->car_status_data()->drsFault(carIdx);
+}
+
+uint8_t F1TS_engineDamage(int8_t carIdx)
+{
+	return telemetry->packet_manager()->car_status_data()->engineDamage(carIdx);
 }
 
 uint8_t F1TS_gearBoxDamage(int8_t carIdx)

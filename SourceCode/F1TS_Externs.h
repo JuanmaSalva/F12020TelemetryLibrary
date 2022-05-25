@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <thread>
+#include <string>
 
 //Welcome to F1TS (F1 Telemetry System), the open source telemetry system for formula 1 games made by Codemasters
 //In this .h you can see all accessible methods from this dll, if you want to edit some of the source code,
@@ -159,6 +160,8 @@ F1LIBRARY_EXPORTS void F1TS_penaltyIssuedCallBack(void (*f)());
 F1LIBRARY_EXPORTS void F1TS_speedTrapTriggeredCallBack(void (*f)());
 
 
+F1LIBRARY_EXPORTS int8_t F1TS_lastEventReceived();
+
 F1LIBRARY_EXPORTS uint8_t F1TS_fastestLapVehicleIdx();
 F1LIBRARY_EXPORTS float F1TS_fastestLaplapTime();	
 F1LIBRARY_EXPORTS uint8_t F1TS_retirementVehicleIdx();	
@@ -183,7 +186,7 @@ F1LIBRARY_EXPORTS uint8_t F1TS_driverId(uint8_t idx);
 F1LIBRARY_EXPORTS uint8_t F1TS_teamId(uint8_t idx);
 F1LIBRARY_EXPORTS uint8_t F1TS_raceNumber(uint8_t idx);
 F1LIBRARY_EXPORTS uint8_t F1TS_nationality(uint8_t idx);
-F1LIBRARY_EXPORTS void F1TS_name(uint8_t idx, char* n);
+F1LIBRARY_EXPORTS void F1TS_name(uint8_t idx, char n[]);
 F1LIBRARY_EXPORTS uint8_t F1TS_yourTelemetry(uint8_t idx);
 
 
@@ -256,6 +259,7 @@ F1LIBRARY_EXPORTS uint8_t F1TS_frontLeftWingDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_frontRightWingDamage(int8_t carIdx) ;
 F1LIBRARY_EXPORTS uint8_t F1TS_rearWingDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_drsFault(int8_t carIdx);
+F1LIBRARY_EXPORTS uint8_t F1TS_engineDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_gearBoxDamage(int8_t carIdx);
 F1LIBRARY_EXPORTS float F1TS_ersStoreEnergy(int8_t carIdx);
 F1LIBRARY_EXPORTS uint8_t F1TS_ersDeployMode(int8_t carIdx) ;

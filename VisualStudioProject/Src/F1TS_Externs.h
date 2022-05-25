@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <thread>
+#include <string>
 
 //Welcome to F1TS (F1 Telemetry System), the open source telemetry system for formula 1 games made by Codemasters
 //In this .h you can see all accessible methods from this dll, if you want to edit some of the source code,
@@ -185,7 +186,7 @@ F1LIBRARY_EXPORTS uint8_t F1TS_driverId(uint8_t idx);
 F1LIBRARY_EXPORTS uint8_t F1TS_teamId(uint8_t idx);
 F1LIBRARY_EXPORTS uint8_t F1TS_raceNumber(uint8_t idx);
 F1LIBRARY_EXPORTS uint8_t F1TS_nationality(uint8_t idx);
-F1LIBRARY_EXPORTS void F1TS_name(uint8_t idx, char* n);
+F1LIBRARY_EXPORTS void F1TS_name(uint8_t idx, char n[]);
 F1LIBRARY_EXPORTS uint8_t F1TS_yourTelemetry(uint8_t idx);
 
 

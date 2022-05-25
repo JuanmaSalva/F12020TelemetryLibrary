@@ -654,7 +654,7 @@ uint8_t F1TS_nationality(uint8_t idx)
 	return telemetry->packet_manager()->participants_data()->nationality(idx);
 }
 
-void F1TS_name(uint8_t idx, char* n)
+void F1TS_name(uint8_t idx, char n[])
 {
 	return telemetry->packet_manager()->participants_data()->name(idx, n);
 }

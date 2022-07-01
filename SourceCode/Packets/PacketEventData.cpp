@@ -14,11 +14,23 @@ void PacketEventData::fromBin(char*& data)
     std::cout << "EventData Code: " << code << std::endl;
 	
     if (code == "SSTA") {
-        if(m_sessionStartedCallBack != nullptr) m_sessionStartedCallBack();
+        if (m_sessionStartedCallBack != nullptr) {
+            std::cout << "Going to call callback\n";
+            m_sessionStartedCallBack();
+            std::cout << "Callback called\n";
+        }
         m_lastEvent = 0;
     }
     else if (code == "SEND") {
-        if(m_sessionEndedCallBack != nullptr) m_sessionEndedCallBack();
+        if (m_sessionEndedCallBack != nullptr)
+        {
+            std::cout << "Going to call callback\n";
+            std::cout << m_sessionEndedCallBack << "\n";
+            m_sessionEndedCallBack();
+            std::cout << "Callback called\n";
+            
+        }
+
         m_lastEvent = 1;
     }
     else if (code == "FTLP")

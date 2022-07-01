@@ -38,6 +38,7 @@ TelemetryF1* telemetry;
 bool isReady_ = false;
 bool isClosed_ = false;
 
+
 //GENERAL.
 F1LIBRARY_EXPORTS void F1TS_startF1Telemetry();
 F1LIBRARY_EXPORTS void F1TS_closeF1Telemetry();

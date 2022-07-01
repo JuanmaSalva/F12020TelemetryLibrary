@@ -500,9 +500,6 @@ void F1TS_sessionStartedCallBack(void(*f)())
 	telemetry->packet_manager()->event_data()->sessionStartedCallBack(f);
 }
 
-
-void(*bro)();
-
 void F1TS_sessionEndedCallBack(void(*f)())
 {
 	telemetry->packet_manager()->event_data()->sessionEndedCallBack(f);

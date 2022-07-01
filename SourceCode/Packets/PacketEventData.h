@@ -45,6 +45,9 @@ union EventDataDetails
 	} SpeedTrap;
 };
 
+
+
+
 /// <summary>
 /// Packet that contains event data, this includes when a session started, ended, fastest lap... (check info.md)
 /// In this case you need to pass a callback tfor each type of event data. This callback then will be called
@@ -66,7 +69,7 @@ private:
 
 	int8_t m_lastEvent = -1;
 
-	void (*m_sessionStartedCallBack)() = nullptr;
+	void(*m_sessionStartedCallBack)() = nullptr;
 	void(*m_sessionEndedCallBack)() = nullptr;
 	void(*m_fastestLapCallBack)() = nullptr;
 	void(*m_retirementCallBack)() = nullptr;

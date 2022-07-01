@@ -121,7 +121,7 @@ SPTP = Speed trap triggered
 ---
 ---
 ##Track Ids
-0 = Melburne\
+0 = Melbourne\
 1 = Paul Ricard\
 2 = Shangai\
 3 = Sakhir (Bahrain)\
